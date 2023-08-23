@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jiaojiao He">
+<meta name="dcterms.date" content="2023-08-04">
 
-<title>Hematology - Diann_QC</title>
+<title>Hematology - Spectronaut Quality Control</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -140,16 +142,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#after-normalization" id="toc-after-normalization" class="nav-link" data-scroll-target="#after-normalization">After normalization</a>
   <ul class="collapse">
-  <li><a href="#comparison-before-and-after-normalisation" id="toc-comparison-before-and-after-normalisation" class="nav-link" data-scroll-target="#comparison-before-and-after-normalisation">comparison before and after normalisation</a></li>
+  <li><a href="#comparison-before-and-after-normalization" id="toc-comparison-before-and-after-normalization" class="nav-link" data-scroll-target="#comparison-before-and-after-normalization">comparison before and after normalization</a></li>
   </ul></li>
   <li><a href="#missing-exploration" id="toc-missing-exploration" class="nav-link" data-scroll-target="#missing-exploration">Missing Exploration</a>
   <ul class="collapse">
   <li><a href="#missing-rate" id="toc-missing-rate" class="nav-link" data-scroll-target="#missing-rate">missing rate</a></li>
   <li><a href="#upset-plot" id="toc-upset-plot" class="nav-link" data-scroll-target="#upset-plot">upset plot</a></li>
   <li><a href="#mean-vs-missing" id="toc-mean-vs-missing" class="nav-link" data-scroll-target="#mean-vs-missing">mean vs missing</a></li>
-  <li><a href="#imputation" id="toc-imputation" class="nav-link" data-scroll-target="#imputation">imputation</a></li>
+  <li><a href="#imputation" id="toc-imputation" class="nav-link" data-scroll-target="#imputation">Imputation</a></li>
   </ul></li>
-  <li><a href="#dimension-reduction" id="toc-dimension-reduction" class="nav-link" data-scroll-target="#dimension-reduction">Dimension Reduction</a></li>
   </ul>
 </nav>
     </div>
@@ -158,14 +159,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Diann_QC</h1>
+<h1 class="title">Spectronaut Quality Control</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jiaojiao He </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 4, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -178,20 +191,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sample-plot" class="level2">
 <h2 class="anchored" data-anchor-id="sample-plot">sample plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"output/seDiann.RData"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>diagOrd <span class="ot">&lt;-</span> <span class="fu">colData</span>(seDiann) <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"output/seSpec.RData"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>diagOrd <span class="ot">&lt;-</span> <span class="fu">colData</span>(seSpec) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diag) <span class="sc">%&gt;%</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">length</span>(smpID)) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(diag)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>smpAnno <span class="ot">&lt;-</span> <span class="fu">colData</span>(seDiann) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>smpAnno <span class="ot">&lt;-</span> <span class="fu">colData</span>(seSpec) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">diag =</span> <span class="fu">factor</span>(diag, <span class="at">levels =</span> diagOrd))</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>smpAnno <span class="ot">&lt;-</span> smpAnno[<span class="fu">order</span>(<span class="fu">match</span>(smpAnno<span class="sc">$</span>diag, diagOrd)), ]</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>smpAnno<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">factor</span>(smpAnno<span class="sc">$</span>ID, <span class="at">levels =</span> smpAnno<span class="sc">$</span>ID)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>preData <span class="ot">&lt;-</span> <span class="fu">assays</span>(seDiann)<span class="sc">$</span>log2 <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"protID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>preData <span class="ot">&lt;-</span> <span class="fu">assays</span>(seSpec)<span class="sc">$</span>log2 <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"protID"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>protID, <span class="at">names_to =</span> <span class="st">"smpID"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(count)) <span class="sc">%&gt;%</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(smpAnno)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -206,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(), <span class="at">legend.position =</span> <span class="st">"bottom"</span>, <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>)) <span class="sc">+</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">7</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)) <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> cusCols)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="768"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </section>
@@ -214,26 +227,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="after-normalization" class="level1">
 <h1>After normalization</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seSub <span class="ot">&lt;-</span> seDiann[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seDiann)))<span class="sc">/</span><span class="fu">ncol</span>(seDiann) <span class="sc">&lt;</span> <span class="fl">0.5</span>, ]</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>exprMat.vst <span class="ot">&lt;-</span> vsn<span class="sc">::</span><span class="fu">justvsn</span>(<span class="fu">assays</span>(seSub)<span class="sc">$</span>count)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>seSub <span class="ot">&lt;-</span> <span class="fu">SummarizedExperiment</span>(<span class="at">assays =</span> exprMat.vst, </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">colData =</span> <span class="fu">colData</span>(seSub), </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">rowData =</span> <span class="fu">rowData</span>(seSub))</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(<span class="fu">assay</span>(seSub))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>seSub <span class="ot">&lt;-</span> seSpec[, <span class="sc">-</span> <span class="fu">which</span>(<span class="fu">colnames</span>(seSpec) <span class="sc">%in%</span> <span class="st">"S454710"</span>)]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>seSub <span class="ot">&lt;-</span> seSub[<span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seSpec)))<span class="sc">/</span><span class="fu">ncol</span>(seSpec) <span class="sc">&lt;</span> <span class="fl">0.5</span>, ]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>exprMat.vst <span class="ot">&lt;-</span> vsn<span class="sc">::</span><span class="fu">justvsn</span>(<span class="fu">assays</span>(seSub)<span class="sc">$</span>count)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>seSub <span class="ot">&lt;-</span> <span class="fu">SummarizedExperiment</span>(<span class="at">assays =</span> exprMat.vst, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">colData =</span> <span class="fu">colData</span>(seSub), </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                              <span class="at">rowData =</span> <span class="fu">rowData</span>(seSub))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(<span class="fu">assay</span>(seSub))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 6938  399</code></pre>
+<pre><code>[1] 6107  398</code></pre>
 </div>
 </div>
-<section id="comparison-before-and-after-normalisation" class="level2">
-<h2 class="anchored" data-anchor-id="comparison-before-and-after-normalisation">comparison before and after normalisation</h2>
+<section id="comparison-before-and-after-normalization" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-before-and-after-normalization">comparison before and after normalization</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>DEP<span class="sc">::</span><span class="fu">meanSdPlot</span>(seDiann)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>DEP<span class="sc">::</span><span class="fu">meanSdPlot</span>(seSpec)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>DEP<span class="sc">::</span><span class="fu">meanSdPlot</span>(seSub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
@@ -246,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribuiton per sample (log2 transformation without normalisation)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="768"></p>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot after filtering and vsn</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>postData <span class="ot">&lt;-</span> <span class="fu">assay</span>(seSub) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"protID"</span>) <span class="sc">%&gt;%</span></span>
@@ -264,7 +278,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Distribuiton per sample (vsn)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="768"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </section>
@@ -274,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="missing-rate" class="level2">
 <h2 class="anchored" data-anchor-id="missing-rate">missing rate</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>missTab <span class="ot">&lt;-</span> <span class="fu">assay</span>(seDiann) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>missTab <span class="ot">&lt;-</span> <span class="fu">assay</span>(seSpec) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sampleNr =</span> <span class="fu">rowSums</span>(<span class="sc">!</span><span class="fu">is.na</span>(.)), </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">missRate =</span> <span class="fu">rowSums</span>(<span class="fu">is.na</span>(.))<span class="sc">/</span><span class="fu">ncol</span>(.))</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -283,11 +297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">protNr =</span> <span class="fu">length</span>(missRate), </span>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">proportion =</span> protNr<span class="sc">/</span><span class="fu">nrow</span>(.)) <span class="sc">%&gt;%</span> <span class="fu">ungroup</span>()</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frequency</span>(seDiann) <span class="sc">+</span> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_frequency</span>(seSpec) <span class="sc">+</span> </span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">size =</span> <span class="dv">7</span>)) <span class="sc">+</span> </span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">0</span>, <span class="dv">399</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>  <span class="co"># + expand_limits(x = c(-2, ncol(wideData) + 2), y = 0)</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -298,16 +312,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)) <span class="sc">+</span></span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Protein missing rate"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="upset-plot" class="level2">
 <h2 class="anchored" data-anchor-id="upset-plot">upset plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>patTab <span class="ot">&lt;-</span> <span class="fu">colData</span>(seDiann) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>patTab <span class="ot">&lt;-</span> <span class="fu">colData</span>(seSpec) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">diagSimple =</span> <span class="fu">ifelse</span>(diag <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"CLL"</span>, <span class="st">"healthy"</span>, <span class="st">"MCL"</span>, <span class="st">"HCL"</span>, <span class="st">"SMZL"</span>, <span class="st">"MZL"</span>), diag, <span class="st">"other"</span>)) </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>presTab <span class="ot">&lt;-</span> <span class="fu">assay</span>(seDiann) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"protID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>presTab <span class="ot">&lt;-</span> <span class="fu">assay</span>(seSpec) <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"protID"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>protID, <span class="at">names_to =</span> <span class="st">"smpID"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(patTab, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"smpID"</span> <span class="ot">=</span> <span class="st">"smpID"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(diagSimple, protID) <span class="sc">%&gt;%</span></span>
@@ -328,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">matrix.color =</span> <span class="st">"slateblue4"</span>,</span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">shade.color =</span> <span class="st">"wheat4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 </section>
@@ -337,75 +351,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_detect</span>(seSub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="imputation" class="level2">
-<h2 class="anchored" data-anchor-id="imputation">imputation</h2>
+<h2 class="anchored" data-anchor-id="imputation">Imputation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assayNames</span>(seSub) <span class="ot">&lt;-</span> <span class="st">"vsn"</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>qrilc <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"QRILC"</span>) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>minProb <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"MinProb"</span>, <span class="at">q =</span> <span class="fl">0.07</span>) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.441956</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>knn <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"knn"</span>, <span class="at">rowmax =</span> <span class="fu">max</span>(<span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seSub))))) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Cluster size 6938 broken into 4551 2387 
-Cluster size 4551 broken into 2888 1663 
-Cluster size 2888 broken into 1 2887 
-Done cluster 1 
-Cluster size 2887 broken into 1699 1188 
-Cluster size 1699 broken into 1129 570 
-Done cluster 1129 
-Done cluster 570 
-Done cluster 1699 
-Done cluster 1188 
-Done cluster 2887 
-Done cluster 2888 
-Cluster size 1663 broken into 501 1162 
-Done cluster 501 
-Done cluster 1162 
-Done cluster 1663 
-Done cluster 4551 
-Cluster size 2387 broken into 1462 925 
-Done cluster 1462 
-Done cluster 925 
-Done cluster 2387 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(seSub, <span class="at">file =</span> <span class="st">"output/seDiann_sub.RData"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>allImp <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">"qrilc"</span>, <span class="st">"minProb"</span>, <span class="st">"knn"</span>), <span class="cf">function</span>(imp){</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assays</span>(seSub)[[imp]] <span class="sc">%&gt;%</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(<span class="at">Mean =</span> <span class="fu">rowMeans</span>(., ), </span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Proportion of Missing</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seSub)))<span class="sc">/</span><span class="fu">ncol</span>(.)) <span class="sc">%&gt;%</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Imputation =</span> imp)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(rbind, .)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">assays</span>(seSub)<span class="sc">$</span>vsn <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_meanMiss</span>(<span class="at">bins =</span> <span class="dv">100</span>, <span class="at">color =</span> <span class="st">"cyan"</span>) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"C"</span>)</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(allImp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">Proportion of Missing</span><span class="st">`</span>, <span class="at">x =</span> Mean, <span class="at">col =</span> Imputation), <span class="at">method =</span> <span class="st">'loess'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Imputation, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="Diann_QC_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="dimension-reduction" class="level1">
-<h1>Dimension Reduction</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>pcRes <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(<span class="fu">t</span>(<span class="fu">assays</span>(seSub)<span class="sc">$</span>qrilc), <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>pcTab <span class="ot">&lt;-</span> pcRes<span class="sc">$</span>x <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(patTab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>qrilc <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"QRILC"</span>) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(smpID)`</code></pre>
+<pre><code>Imputing along margin 2 (samples/columns).</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>minProb <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"MinProb"</span>, <span class="at">q =</span> <span class="fl">0.07</span>) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Imputing along margin 2 (samples/columns).</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6433399</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">assays</span>(seSub)<span class="sc">$</span>knn <span class="ot">&lt;-</span> DEP<span class="sc">::</span><span class="fu">impute</span>(seSub, <span class="st">"knn"</span>, <span class="at">rowmax =</span> <span class="fu">max</span>(<span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seSub))))) <span class="sc">%&gt;%</span> <span class="fu">assay</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Imputing along margin 1 (features/rows).</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cluster size 6107 broken into 2844 3263 
+Cluster size 2844 broken into 832 2012 
+Done cluster 832 
+Cluster size 2012 broken into 891 1121 
+Done cluster 891 
+Done cluster 1121 
+Done cluster 2012 
+Done cluster 2844 
+Cluster size 3263 broken into 1295 1968 
+Done cluster 1295 
+Cluster size 1968 broken into 226 1742 
+Done cluster 226 
+Cluster size 1742 broken into 1632 110 
+Cluster size 1632 broken into 1120 512 
+Done cluster 1120 
+Done cluster 512 
+Done cluster 1632 
+Done cluster 110 
+Done cluster 1742 
+Done cluster 1968 
+Done cluster 3263 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(seSub, <span class="at">file =</span> <span class="st">"output/seSpec_sub.RData"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>allImp <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">c</span>(<span class="st">"qrilc"</span>, <span class="st">"minProb"</span>, <span class="st">"knn"</span>), <span class="cf">function</span>(imp){</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assays</span>(seSub)[[imp]] <span class="sc">%&gt;%</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(<span class="at">Mean =</span> <span class="fu">rowMeans</span>(., ), </span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>           <span class="st">`</span><span class="at">Proportion of Missing</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">rowSums</span>(<span class="fu">is.na</span>(<span class="fu">assay</span>(seSub)))<span class="sc">/</span><span class="fu">ncol</span>(.)) <span class="sc">%&gt;%</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Imputation =</span> imp)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(rbind, .)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>plot1 <span class="ot">&lt;-</span> <span class="fu">assays</span>(seSub)<span class="sc">$</span>vsn <span class="sc">%&gt;%</span> <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_meanMiss</span>(<span class="at">bins =</span> <span class="dv">100</span>, <span class="at">color =</span> <span class="st">"cyan"</span>) <span class="sc">+</span> <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"C"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>plot1 <span class="sc">+</span> <span class="fu">geom_smooth</span>(allImp, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> <span class="st">`</span><span class="at">Proportion of Missing</span><span class="st">`</span>, <span class="at">x =</span> Mean, <span class="at">col =</span> Imputation), <span class="at">method =</span> <span class="st">'loess'</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>Imputation, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Spec_QC_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
