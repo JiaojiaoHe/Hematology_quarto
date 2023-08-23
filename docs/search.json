@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Hematology Disease Analysis",
+    "section": "",
+    "text": "Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of Diann and Spectronaut\n\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation and visualisation.\n\n\nDiann\nSpectronaut\n\n\nDimension Reduction: observe how current data perform after using principle component analysis.\n\n\nDiann\nSpectronaut\n\n\nDifferential Expression"
+  },
+  {
+    "objectID": "index.html#preparatory-data-analysis",
+    "href": "index.html#preparatory-data-analysis",
+    "title": "Hematology Disease Analysis",
+    "section": "",
+    "text": "Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of Diann and Spectronaut\n\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation and visualisation.\n\n\nDiann\nSpectronaut\n\n\nDimension Reduction: observe how current data perform after using principle component analysis.\n\n\nDiann\nSpectronaut\n\n\nDifferential Expression"
+  },
+  {
+    "objectID": "Diann_QC.html",
+    "href": "Diann_QC.html",
+    "title": "Diann_QC",
+    "section": "",
+    "text": "load(\"output/seDiann.RData\")\ndiagOrd &lt;- colData(seDiann) %&gt;% \n  as_tibble(rownames = \"smpID\") %&gt;% \n  group_by(diag) %&gt;%\n  summarise(n = length(smpID)) %&gt;% \n  arrange(desc(n)) %&gt;%\n  pull(diag)\nsmpAnno &lt;- colData(seDiann) %&gt;% \n  as_tibble(rownames = \"smpID\") %&gt;% \n  mutate(diag = factor(diag, levels = diagOrd))\nsmpAnno &lt;- smpAnno[order(match(smpAnno$diag, diagOrd)), ]\nsmpAnno$ID &lt;- factor(smpAnno$ID, levels = smpAnno$ID)\n\npreData &lt;- assays(seDiann)$log2 %&gt;% as_tibble(rownames = \"protID\") %&gt;%\n  pivot_longer(-protID, names_to = \"smpID\", values_to = \"count\") %&gt;%\n  filter(!is.na(count)) %&gt;%\n  left_join(smpAnno)\n\nJoining with `by = join_by(smpID)`\n\ncusCols &lt;- c(\"#15A371\", \"green\", \"#A8F0BA\", \"blue\", \"#5083D1\", \"#8ECCF5\", \"cyan\", \n             \"#ED1379\", \"maroon1\", \"purple\", \"#AD9490\", \"brown\", \"red\", \"yellow\", \n             \"#E8CF15\", \"#F2D39B\", \"lightsalmon1\", \"antiquewhite\", \"black\")\nggplot(preData, aes(x = ID, y = count, fill = diag)) +\n  geom_bar(stat = \"identity\") +\n  theme(axis.text.x = element_blank(), legend.position = \"bottom\", legend.text = element_text(size = 7)) +\n  guides(fill = guide_legend(nrow = 7, byrow = TRUE)) + scale_fill_manual(values = cusCols)"
+  },
+  {
+    "objectID": "Diann_QC.html#sample-plot",
+    "href": "Diann_QC.html#sample-plot",
+    "title": "Diann_QC",
+    "section": "",
+    "text": "load(\"output/seDiann.RData\")\ndiagOrd &lt;- colData(seDiann) %&gt;% \n  as_tibble(rownames = \"smpID\") %&gt;% \n  group_by(diag) %&gt;%\n  summarise(n = length(smpID)) %&gt;% \n  arrange(desc(n)) %&gt;%\n  pull(diag)\nsmpAnno &lt;- colData(seDiann) %&gt;% \n  as_tibble(rownames = \"smpID\") %&gt;% \n  mutate(diag = factor(diag, levels = diagOrd))\nsmpAnno &lt;- smpAnno[order(match(smpAnno$diag, diagOrd)), ]\nsmpAnno$ID &lt;- factor(smpAnno$ID, levels = smpAnno$ID)\n\npreData &lt;- assays(seDiann)$log2 %&gt;% as_tibble(rownames = \"protID\") %&gt;%\n  pivot_longer(-protID, names_to = \"smpID\", values_to = \"count\") %&gt;%\n  filter(!is.na(count)) %&gt;%\n  left_join(smpAnno)\n\nJoining with `by = join_by(smpID)`\n\ncusCols &lt;- c(\"#15A371\", \"green\", \"#A8F0BA\", \"blue\", \"#5083D1\", \"#8ECCF5\", \"cyan\", \n             \"#ED1379\", \"maroon1\", \"purple\", \"#AD9490\", \"brown\", \"red\", \"yellow\", \n             \"#E8CF15\", \"#F2D39B\", \"lightsalmon1\", \"antiquewhite\", \"black\")\nggplot(preData, aes(x = ID, y = count, fill = diag)) +\n  geom_bar(stat = \"identity\") +\n  theme(axis.text.x = element_blank(), legend.position = \"bottom\", legend.text = element_text(size = 7)) +\n  guides(fill = guide_legend(nrow = 7, byrow = TRUE)) + scale_fill_manual(values = cusCols)"
+  },
+  {
+    "objectID": "Diann_QC.html#comparison-before-and-after-normalisation",
+    "href": "Diann_QC.html#comparison-before-and-after-normalisation",
+    "title": "Diann_QC",
+    "section": "comparison before and after normalisation",
+    "text": "comparison before and after normalisation\n\nDEP::meanSdPlot(seDiann)\n\n\n\nDEP::meanSdPlot(seSub)\n\n\n\n\n\n# log2 plot\npreData %&gt;%\n  ggplot(aes(x = ID, y = count, fill = diag)) +\n  geom_boxplot(outlier.shape = NA) +\n  theme(axis.text.y = element_blank(), legend.position = \"bottom\", plot.title = element_text(hjust = 0.5)) + \n  scale_fill_manual(values = cusCols) +\n  coord_flip() +\n  ggtitle(\"Distribuiton per sample (log2 transformation without normalisation)\")\n\n\n\n# Plot after filtering and vsn\npostData &lt;- assay(seSub) %&gt;% as_tibble(rownames = \"protID\") %&gt;%\n  pivot_longer(-protID, names_to = \"smpID\", values_to = \"count\") %&gt;%\n  filter(!is.na(count)) %&gt;%\n  left_join(smpAnno)\n\nJoining with `by = join_by(smpID)`\n\npostData %&gt;% \n  ggplot(aes(x = ID, y = count, fill = diag)) +\n  geom_boxplot(outlier.shape = NA) +\n  theme(axis.text.y = element_blank(), legend.position = \"bottom\", plot.title = element_text(hjust = 0.5)) + \n  scale_fill_manual(values = cusCols) +\n  coord_flip() +\n  ggtitle(\"Distribuiton per sample (vsn)\")"
+  },
+  {
+    "objectID": "Diann_QC.html#missing-rate",
+    "href": "Diann_QC.html#missing-rate",
+    "title": "Diann_QC",
+    "section": "missing rate",
+    "text": "missing rate\n\nmissTab &lt;- assay(seDiann) %&gt;% as.data.frame() %&gt;%\n  mutate(sampleNr = rowSums(!is.na(.)), \n         missRate = rowSums(is.na(.))/ncol(.))\n\nmissPropTab &lt;- missTab  %&gt;%\n  group_by(missRate, sampleNr) %&gt;%\n  summarise(protNr = length(missRate), \n            proportion = protNr/nrow(.)) %&gt;% ungroup()\n\nplot_frequency(seDiann) + \n  theme(axis.text.x = element_text(angle = 45, size = 7)) + \n  scale_x_discrete(breaks = seq(-0, 399, 10))\n\n\n\n  # + expand_limits(x = c(-2, ncol(wideData) + 2), y = 0)\n\nmissPropTab %&gt;% ggplot(aes(x = missRate, y = proportion)) + geom_line(linewidth = 0.7, color = \"green\") +\n  theme(axis.title.y.right = element_text(color = \"green\"))+ \n  labs(x = \"Missing rate (%)\") +\n  theme_bw() +\n  theme(plot.title = element_text(hjust = 0.5)) +\n  labs(title = \"Protein missing rate\")"
+  },
+  {
+    "objectID": "Diann_QC.html#upset-plot",
+    "href": "Diann_QC.html#upset-plot",
+    "title": "Diann_QC",
+    "section": "UpSet plot",
+    "text": "UpSet plot\n\npatTab &lt;- colData(seDiann) %&gt;% as_tibble(rownames = \"smpID\") %&gt;%\n    mutate(diagSimple = ifelse(diag %in% c(\"CLL\", \"healthy\", \"MCL\", \"HCL\", \"SMZL\", \"MZL\"), diag, \"other\")) \npresTab &lt;- assay(seDiann) %&gt;% as_tibble(rownames = \"protID\") %&gt;%\n  pivot_longer(-protID, names_to = \"smpID\", values_to = \"count\") %&gt;%\n  left_join(patTab, by = c(\"smpID\" = \"smpID\")) %&gt;%\n  group_by(diagSimple, protID) %&gt;%\n  summarise(presence = ifelse(sum(is.na(count)) == 0 , 1, 0)) %&gt;%\n  ungroup() %&gt;%\n  pivot_wider(names_from = diagSimple, values_from = presence) %&gt;%\n  column_to_rownames(\"protID\")\n\n`summarise()` has grouped output by 'diagSimple'. You can override using the\n`.groups` argument.\n\nsetVars &lt;- c(\"CLL\", \"healthy\", \"MCL\", \"HCL\", \"SMZL\", \"MZL\", \"other\")\nupset(presTab,\n      sets = setVars,\n      order.by = \"freq\",\n        main.bar.color = \"violetred4\",\n        sets.bar.color = \"turquoise4\",\n        matrix.color = \"slateblue4\",\n        shade.color = \"wheat4\")"
+  },
+  {
+    "objectID": "Diann_QC.html#mean-vs-missing",
+    "href": "Diann_QC.html#mean-vs-missing",
+    "title": "Diann_QC",
+    "section": "mean vs missing",
+    "text": "mean vs missing\n\nplot_detect(seSub)"
+  },
+  {
+    "objectID": "Diann_QC.html#imputation",
+    "href": "Diann_QC.html#imputation",
+    "title": "Diann_QC",
+    "section": "imputation",
+    "text": "imputation\n\nassayNames(seSub) &lt;- \"vsn\"\nassays(seSub)$qrilc &lt;- DEP::impute(seSub, \"QRILC\") %&gt;% assay()\n\nImputing along margin 2 (samples/columns).\n\nassays(seSub)$minProb &lt;- DEP::impute(seSub, \"MinProb\", q = 0.07) %&gt;% assay()\n\nImputing along margin 2 (samples/columns).\n\n\n[1] 0.441956\n\nassays(seSub)$knn &lt;- DEP::impute(seSub, \"knn\", rowmax = max(rowSums(is.na(assay(seSub))))) %&gt;% assay()\n\nImputing along margin 1 (features/rows).\n\n\nCluster size 6938 broken into 4551 2387 \nCluster size 4551 broken into 2888 1663 \nCluster size 2888 broken into 1 2887 \nDone cluster 1 \nCluster size 2887 broken into 1699 1188 \nCluster size 1699 broken into 1129 570 \nDone cluster 1129 \nDone cluster 570 \nDone cluster 1699 \nDone cluster 1188 \nDone cluster 2887 \nDone cluster 2888 \nCluster size 1663 broken into 501 1162 \nDone cluster 501 \nDone cluster 1162 \nDone cluster 1663 \nDone cluster 4551 \nCluster size 2387 broken into 1462 925 \nDone cluster 1462 \nDone cluster 925 \nDone cluster 2387 \n\nsave(seSub, file = \"output/seDiann_sub.RData\")\n\nallImp &lt;- lapply(c(\"qrilc\", \"minProb\", \"knn\"), function(imp){\n  assays(seSub)[[imp]] %&gt;%\n    tibble(Mean = rowMeans(., ), \n           `Proportion of Missing` = rowSums(is.na(assay(seSub)))/ncol(.)) %&gt;%\n    mutate(Imputation = imp)\n}) %&gt;% do.call(rbind, .)\n\nplot1 &lt;- assays(seSub)$vsn %&gt;% t() %&gt;%\n  plot_meanMiss(bins = 100, color = \"cyan\") + scale_fill_viridis_c(option = \"C\")\nplot1 + geom_smooth(allImp, mapping = aes(y = `Proportion of Missing`, x = Mean, col = Imputation), method = 'loess', se = FALSE) + facet_wrap(~Imputation, ncol = 2) + theme_bw()\n\n`geom_smooth()` using formula = 'y ~ x'"
+  }
+]
