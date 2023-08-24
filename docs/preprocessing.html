@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Jiaojiao He">
+<meta name="dcterms.date" content="2023-07-24">
 
 <title>Hematology - Preprocessing</title>
 <style>
@@ -154,7 +156,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jiaojiao He </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 24, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -165,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="metadata-investigation" class="level1">
 <h1>Metadata Investigation</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. sample annotation</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample annotation</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>smpDF <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span> (<span class="st">"data/Proteomics_o30666_samplePreparation_V3_SP.xlsx"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">smpID =</span> <span class="fu">paste0</span>(<span class="st">"S"</span>, <span class="st">`</span><span class="at">Sample ID bfabric</span><span class="st">`</span>),</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">patID =</span> PatientID,</span>
