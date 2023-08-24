@@ -527,1074 +527,811 @@ Done cluster 2387 </code></pre>
 </table>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>patNum <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">table</span>(pcTab<span class="sc">$</span>patID), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(patNum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">t</span>(patNum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Var1</th>
-<th style="text-align: right;">Freq</th>
+<th style="text-align: right;">PID1712</th>
+<th style="text-align: right;">PID1564</th>
+<th style="text-align: right;">PID497</th>
+<th style="text-align: right;">PID935</th>
+<th style="text-align: right;">Donor 1205</th>
+<th style="text-align: right;">Donor 171590</th>
+<th style="text-align: right;">Donor 171779</th>
+<th style="text-align: right;">Donor 9200</th>
+<th style="text-align: right;">P0050</th>
+<th style="text-align: right;">P0314</th>
+<th style="text-align: right;">P0353</th>
+<th style="text-align: right;">P0777</th>
+<th style="text-align: right;">PID1191</th>
+<th style="text-align: right;">PID1457</th>
+<th style="text-align: right;">PID1691</th>
+<th style="text-align: right;">PID1913</th>
+<th style="text-align: right;">PID859</th>
+<th style="text-align: right;">PID934</th>
+<th style="text-align: right;">PID940</th>
+<th style="text-align: right;">Donor 171944</th>
+<th style="text-align: right;">Donor 2204</th>
+<th style="text-align: right;">Donor 3208</th>
+<th style="text-align: right;">Donor 4208</th>
+<th style="text-align: right;">Donor 9209</th>
+<th style="text-align: right;">P0508</th>
+<th style="text-align: right;">P0734</th>
+<th style="text-align: right;">PID1009</th>
+<th style="text-align: right;">PID1023</th>
+<th style="text-align: right;">PID1146</th>
+<th style="text-align: right;">PID1201</th>
+<th style="text-align: right;">PID1203</th>
+<th style="text-align: right;">PID1229</th>
+<th style="text-align: right;">PID1264</th>
+<th style="text-align: right;">PID1340</th>
+<th style="text-align: right;">PID1418</th>
+<th style="text-align: right;">PID1419</th>
+<th style="text-align: right;">PID1662</th>
+<th style="text-align: right;">PID1844</th>
+<th style="text-align: right;">PID2105</th>
+<th style="text-align: right;">Donor 171532</th>
+<th style="text-align: right;">Donor 3206</th>
+<th style="text-align: right;">P0641</th>
+<th style="text-align: right;">P0782</th>
+<th style="text-align: right;">P1151</th>
+<th style="text-align: right;">PID1014</th>
+<th style="text-align: right;">PID1027</th>
+<th style="text-align: right;">PID110</th>
+<th style="text-align: right;">PID1109</th>
+<th style="text-align: right;">PID1200</th>
+<th style="text-align: right;">PID1246</th>
+<th style="text-align: right;">PID1344</th>
+<th style="text-align: right;">PID1350</th>
+<th style="text-align: right;">PID1359</th>
+<th style="text-align: right;">PID1450</th>
+<th style="text-align: right;">PID1456</th>
+<th style="text-align: right;">PID1517</th>
+<th style="text-align: right;">PID1561</th>
+<th style="text-align: right;">PID1579</th>
+<th style="text-align: right;">PID1624</th>
+<th style="text-align: right;">PID1670</th>
+<th style="text-align: right;">PID1694</th>
+<th style="text-align: right;">PID1704</th>
+<th style="text-align: right;">PID1893</th>
+<th style="text-align: right;">PID1982</th>
+<th style="text-align: right;">PID2168</th>
+<th style="text-align: right;">PID279</th>
+<th style="text-align: right;">PID301</th>
+<th style="text-align: right;">PID883</th>
+<th style="text-align: right;">PID907</th>
+<th style="text-align: right;">PID961</th>
+<th style="text-align: right;">P0034</th>
+<th style="text-align: right;">P0057</th>
+<th style="text-align: right;">P0350</th>
+<th style="text-align: right;">P0361</th>
+<th style="text-align: right;">P0435</th>
+<th style="text-align: right;">P0444</th>
+<th style="text-align: right;">P0453</th>
+<th style="text-align: right;">P0511</th>
+<th style="text-align: right;">P0520</th>
+<th style="text-align: right;">P0527</th>
+<th style="text-align: right;">P0534</th>
+<th style="text-align: right;">P0535</th>
+<th style="text-align: right;">P0573</th>
+<th style="text-align: right;">P0584</th>
+<th style="text-align: right;">P0599</th>
+<th style="text-align: right;">P0680</th>
+<th style="text-align: right;">P0682</th>
+<th style="text-align: right;">P0683</th>
+<th style="text-align: right;">P0709</th>
+<th style="text-align: right;">P0710</th>
+<th style="text-align: right;">P0739</th>
+<th style="text-align: right;">P0744</th>
+<th style="text-align: right;">P0758</th>
+<th style="text-align: right;">P0761</th>
+<th style="text-align: right;">P0773</th>
+<th style="text-align: right;">P0774</th>
+<th style="text-align: right;">P0785</th>
+<th style="text-align: right;">P0819</th>
+<th style="text-align: right;">P0825</th>
+<th style="text-align: right;">P0892</th>
+<th style="text-align: right;">P0994</th>
+<th style="text-align: right;">P1001</th>
+<th style="text-align: right;">P1006</th>
+<th style="text-align: right;">P1029</th>
+<th style="text-align: right;">P1043</th>
+<th style="text-align: right;">P1057</th>
+<th style="text-align: right;">P1060</th>
+<th style="text-align: right;">P1063</th>
+<th style="text-align: right;">P1067</th>
+<th style="text-align: right;">P1137</th>
+<th style="text-align: right;">P1154</th>
+<th style="text-align: right;">P1225</th>
+<th style="text-align: right;">P1295</th>
+<th style="text-align: right;">PID1013</th>
+<th style="text-align: right;">PID1015</th>
+<th style="text-align: right;">PID1016</th>
+<th style="text-align: right;">PID1022</th>
+<th style="text-align: right;">PID1024</th>
+<th style="text-align: right;">PID1035</th>
+<th style="text-align: right;">PID1036</th>
+<th style="text-align: right;">PID1039</th>
+<th style="text-align: right;">PID1045</th>
+<th style="text-align: right;">PID1046</th>
+<th style="text-align: right;">PID1065</th>
+<th style="text-align: right;">PID1068</th>
+<th style="text-align: right;">PID1077</th>
+<th style="text-align: right;">PID1081</th>
+<th style="text-align: right;">PID1086</th>
+<th style="text-align: right;">PID1091</th>
+<th style="text-align: right;">PID1092</th>
+<th style="text-align: right;">PID1095</th>
+<th style="text-align: right;">PID1098</th>
+<th style="text-align: right;">PID1102</th>
+<th style="text-align: right;">PID1113</th>
+<th style="text-align: right;">PID1122</th>
+<th style="text-align: right;">PID1128</th>
+<th style="text-align: right;">PID1133</th>
+<th style="text-align: right;">PID1137</th>
+<th style="text-align: right;">PID1165</th>
+<th style="text-align: right;">PID1167</th>
+<th style="text-align: right;">PID1170</th>
+<th style="text-align: right;">PID1171</th>
+<th style="text-align: right;">PID1173</th>
+<th style="text-align: right;">PID1176</th>
+<th style="text-align: right;">PID1177</th>
+<th style="text-align: right;">PID1179</th>
+<th style="text-align: right;">PID1192</th>
+<th style="text-align: right;">PID1199</th>
+<th style="text-align: right;">PID121</th>
+<th style="text-align: right;">PID1210</th>
+<th style="text-align: right;">PID1211</th>
+<th style="text-align: right;">PID1222</th>
+<th style="text-align: right;">PID1226</th>
+<th style="text-align: right;">PID1228</th>
+<th style="text-align: right;">PID1242</th>
+<th style="text-align: right;">PID1247</th>
+<th style="text-align: right;">PID1248</th>
+<th style="text-align: right;">PID1258</th>
+<th style="text-align: right;">PID1260</th>
+<th style="text-align: right;">PID1274</th>
+<th style="text-align: right;">PID1276</th>
+<th style="text-align: right;">PID1280</th>
+<th style="text-align: right;">PID1285</th>
+<th style="text-align: right;">PID1293</th>
+<th style="text-align: right;">PID1301</th>
+<th style="text-align: right;">PID1307</th>
+<th style="text-align: right;">PID1318</th>
+<th style="text-align: right;">PID1332</th>
+<th style="text-align: right;">PID1342</th>
+<th style="text-align: right;">PID1349</th>
+<th style="text-align: right;">PID1370</th>
+<th style="text-align: right;">PID1371</th>
+<th style="text-align: right;">PID1382</th>
+<th style="text-align: right;">PID1392</th>
+<th style="text-align: right;">PID1399</th>
+<th style="text-align: right;">PID1420</th>
+<th style="text-align: right;">PID1437</th>
+<th style="text-align: right;">PID1438</th>
+<th style="text-align: right;">PID1439</th>
+<th style="text-align: right;">PID1440</th>
+<th style="text-align: right;">PID1454</th>
+<th style="text-align: right;">PID1461</th>
+<th style="text-align: right;">PID1462</th>
+<th style="text-align: right;">PID1469</th>
+<th style="text-align: right;">PID1470</th>
+<th style="text-align: right;">PID1485</th>
+<th style="text-align: right;">PID1489</th>
+<th style="text-align: right;">PID1494</th>
+<th style="text-align: right;">PID1496</th>
+<th style="text-align: right;">PID1511</th>
+<th style="text-align: right;">PID1516</th>
+<th style="text-align: right;">PID1547</th>
+<th style="text-align: right;">PID1557</th>
+<th style="text-align: right;">PID1565</th>
+<th style="text-align: right;">PID1590</th>
+<th style="text-align: right;">PID1591</th>
+<th style="text-align: right;">PID1601</th>
+<th style="text-align: right;">PID1602</th>
+<th style="text-align: right;">PID1603</th>
+<th style="text-align: right;">PID1617</th>
+<th style="text-align: right;">PID1634</th>
+<th style="text-align: right;">PID1637</th>
+<th style="text-align: right;">PID1638</th>
+<th style="text-align: right;">PID1644</th>
+<th style="text-align: right;">PID1650</th>
+<th style="text-align: right;">PID1653</th>
+<th style="text-align: right;">PID1663</th>
+<th style="text-align: right;">PID1673</th>
+<th style="text-align: right;">PID1677</th>
+<th style="text-align: right;">PID1678</th>
+<th style="text-align: right;">PID1684</th>
+<th style="text-align: right;">PID1705</th>
+<th style="text-align: right;">PID1732</th>
+<th style="text-align: right;">PID1761</th>
+<th style="text-align: right;">PID1784</th>
+<th style="text-align: right;">PID1791</th>
+<th style="text-align: right;">PID1876</th>
+<th style="text-align: right;">PID1877</th>
+<th style="text-align: right;">PID1912</th>
+<th style="text-align: right;">PID1976</th>
+<th style="text-align: right;">PID1997</th>
+<th style="text-align: right;">PID2031</th>
+<th style="text-align: right;">PID2036</th>
+<th style="text-align: right;">PID2060</th>
+<th style="text-align: right;">PID2072</th>
+<th style="text-align: right;">PID2089</th>
+<th style="text-align: right;">PID2115</th>
+<th style="text-align: right;">PID2202</th>
+<th style="text-align: right;">PID2224</th>
+<th style="text-align: right;">PID2233</th>
+<th style="text-align: right;">PID229</th>
+<th style="text-align: right;">PID2304</th>
+<th style="text-align: right;">PID239</th>
+<th style="text-align: right;">PID2431</th>
+<th style="text-align: right;">PID263</th>
+<th style="text-align: right;">PID305</th>
+<th style="text-align: right;">PID436</th>
+<th style="text-align: right;">PID450</th>
+<th style="text-align: right;">PID512</th>
+<th style="text-align: right;">PID518</th>
+<th style="text-align: right;">PID528</th>
+<th style="text-align: right;">PID647</th>
+<th style="text-align: right;">PID674</th>
+<th style="text-align: right;">PID675</th>
+<th style="text-align: right;">PID74</th>
+<th style="text-align: right;">PID770</th>
+<th style="text-align: right;">PID865</th>
+<th style="text-align: right;">PID884</th>
+<th style="text-align: right;">PID889</th>
+<th style="text-align: right;">PID894</th>
+<th style="text-align: right;">PID898</th>
+<th style="text-align: right;">PID901</th>
+<th style="text-align: right;">PID903</th>
+<th style="text-align: right;">PID909</th>
+<th style="text-align: right;">PID951</th>
+<th style="text-align: right;">PID952</th>
+<th style="text-align: right;">PID955</th>
+<th style="text-align: right;">PID957</th>
+<th style="text-align: right;">PID963</th>
+<th style="text-align: right;">PID970</th>
+<th style="text-align: right;">PID976</th>
+<th style="text-align: right;">PID982</th>
+<th style="text-align: right;">PID985</th>
+<th style="text-align: right;">PID988</th>
+<th style="text-align: right;">PID989</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">PID1712</td>
 <td style="text-align: right;">7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1564</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID497</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID935</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 1205</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 171590</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 171779</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 9200</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0050</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0314</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0353</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0777</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1191</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1457</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1691</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1913</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID859</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID934</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID940</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 171944</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 2204</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 3208</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 4208</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 9209</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0508</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0734</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1009</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1023</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1146</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1201</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1203</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1229</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1264</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1340</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1418</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1419</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1662</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1844</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2105</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 171532</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 3206</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0641</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0782</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1151</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1014</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1027</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID110</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1109</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1200</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1246</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1344</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1350</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1359</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1450</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1456</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1517</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1561</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1579</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1624</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1670</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1694</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1704</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1893</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1982</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2168</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID279</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID301</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID883</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID907</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID961</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0034</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0057</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0350</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0361</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0435</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0444</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0453</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0511</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0520</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0527</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0534</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0535</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0573</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0584</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0599</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0680</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0682</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0683</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0709</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0710</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0739</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0744</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0758</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0761</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0773</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0774</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0785</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0819</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0825</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0892</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0994</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1001</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1006</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1029</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1043</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1057</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1060</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1063</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1067</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1137</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1154</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1225</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1295</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1013</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1015</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1016</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1022</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1024</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1035</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1039</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1045</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1046</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1065</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1068</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1077</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1081</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1086</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1091</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1092</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1095</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1098</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1102</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1113</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1122</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1128</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1133</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1137</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1165</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1167</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1170</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1171</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1173</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1176</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1177</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1179</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1192</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1199</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID121</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1210</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1211</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1222</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1226</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1228</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1242</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1247</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1248</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1258</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1260</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1274</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1276</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1280</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1285</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1293</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1301</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1307</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1318</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1332</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1342</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1349</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1370</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1371</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1382</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1392</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1399</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1420</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1437</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1438</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1439</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1440</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1454</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1461</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1462</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1469</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1470</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1485</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1489</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1494</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1496</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1511</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1516</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1547</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1557</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1565</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1590</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1591</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1601</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1602</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1603</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1617</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1634</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1637</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1638</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1644</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1650</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1653</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1663</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1673</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1677</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1678</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1684</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1705</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1732</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1761</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1784</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1791</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1876</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1877</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1912</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1976</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1997</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2031</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2060</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2072</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2089</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2115</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2202</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2224</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2233</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID229</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2304</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID239</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2431</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID263</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID305</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID436</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID450</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID512</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID518</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID528</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID647</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID674</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID675</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID74</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID770</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID865</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID884</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID889</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID894</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID898</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID901</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID903</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID909</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID951</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID952</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID955</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID957</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID963</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID970</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID976</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID982</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID985</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID988</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID989</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -1851,58 +1588,49 @@ Done cluster 2387 </code></pre>
 </table>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>patNum <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">table</span>(pcTab<span class="sc">$</span>patID), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(patNum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">t</span>(patNum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 8%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Var1</th>
-<th style="text-align: right;">Freq</th>
+<th style="text-align: right;">Donor 1205</th>
+<th style="text-align: right;">Donor 171590</th>
+<th style="text-align: right;">Donor 171779</th>
+<th style="text-align: right;">Donor 9200</th>
+<th style="text-align: right;">Donor 171944</th>
+<th style="text-align: right;">Donor 2204</th>
+<th style="text-align: right;">Donor 3208</th>
+<th style="text-align: right;">Donor 4208</th>
+<th style="text-align: right;">Donor 9209</th>
+<th style="text-align: right;">Donor 171532</th>
+<th style="text-align: right;">Donor 3206</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Donor 1205</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 171590</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 171779</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 9200</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 171944</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 2204</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 3208</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 4208</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 9209</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Donor 171532</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Donor 3206</td>
 <td style="text-align: right;">2</td>
 </tr>
 </tbody>
@@ -2136,1030 +1864,778 @@ Done cluster 2387 </code></pre>
 </table>
 </div>
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>patNum <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">table</span>(pcTab<span class="sc">$</span>patID), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(patNum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">t</span>(patNum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Var1</th>
-<th style="text-align: right;">Freq</th>
+<th style="text-align: right;">PID1712</th>
+<th style="text-align: right;">PID1564</th>
+<th style="text-align: right;">PID497</th>
+<th style="text-align: right;">PID935</th>
+<th style="text-align: right;">P0050</th>
+<th style="text-align: right;">P0314</th>
+<th style="text-align: right;">P0353</th>
+<th style="text-align: right;">P0777</th>
+<th style="text-align: right;">PID1191</th>
+<th style="text-align: right;">PID1457</th>
+<th style="text-align: right;">PID1691</th>
+<th style="text-align: right;">PID1913</th>
+<th style="text-align: right;">PID859</th>
+<th style="text-align: right;">PID934</th>
+<th style="text-align: right;">PID940</th>
+<th style="text-align: right;">P0508</th>
+<th style="text-align: right;">P0734</th>
+<th style="text-align: right;">PID1009</th>
+<th style="text-align: right;">PID1023</th>
+<th style="text-align: right;">PID1146</th>
+<th style="text-align: right;">PID1201</th>
+<th style="text-align: right;">PID1203</th>
+<th style="text-align: right;">PID1229</th>
+<th style="text-align: right;">PID1264</th>
+<th style="text-align: right;">PID1340</th>
+<th style="text-align: right;">PID1418</th>
+<th style="text-align: right;">PID1419</th>
+<th style="text-align: right;">PID1662</th>
+<th style="text-align: right;">PID1844</th>
+<th style="text-align: right;">PID2105</th>
+<th style="text-align: right;">P0641</th>
+<th style="text-align: right;">P0782</th>
+<th style="text-align: right;">P1151</th>
+<th style="text-align: right;">PID1014</th>
+<th style="text-align: right;">PID1027</th>
+<th style="text-align: right;">PID110</th>
+<th style="text-align: right;">PID1109</th>
+<th style="text-align: right;">PID1200</th>
+<th style="text-align: right;">PID1246</th>
+<th style="text-align: right;">PID1344</th>
+<th style="text-align: right;">PID1350</th>
+<th style="text-align: right;">PID1359</th>
+<th style="text-align: right;">PID1450</th>
+<th style="text-align: right;">PID1456</th>
+<th style="text-align: right;">PID1517</th>
+<th style="text-align: right;">PID1561</th>
+<th style="text-align: right;">PID1579</th>
+<th style="text-align: right;">PID1624</th>
+<th style="text-align: right;">PID1670</th>
+<th style="text-align: right;">PID1694</th>
+<th style="text-align: right;">PID1704</th>
+<th style="text-align: right;">PID1893</th>
+<th style="text-align: right;">PID1982</th>
+<th style="text-align: right;">PID2168</th>
+<th style="text-align: right;">PID279</th>
+<th style="text-align: right;">PID301</th>
+<th style="text-align: right;">PID883</th>
+<th style="text-align: right;">PID907</th>
+<th style="text-align: right;">PID961</th>
+<th style="text-align: right;">P0034</th>
+<th style="text-align: right;">P0057</th>
+<th style="text-align: right;">P0350</th>
+<th style="text-align: right;">P0361</th>
+<th style="text-align: right;">P0435</th>
+<th style="text-align: right;">P0444</th>
+<th style="text-align: right;">P0453</th>
+<th style="text-align: right;">P0511</th>
+<th style="text-align: right;">P0520</th>
+<th style="text-align: right;">P0527</th>
+<th style="text-align: right;">P0534</th>
+<th style="text-align: right;">P0535</th>
+<th style="text-align: right;">P0573</th>
+<th style="text-align: right;">P0584</th>
+<th style="text-align: right;">P0599</th>
+<th style="text-align: right;">P0680</th>
+<th style="text-align: right;">P0682</th>
+<th style="text-align: right;">P0683</th>
+<th style="text-align: right;">P0709</th>
+<th style="text-align: right;">P0710</th>
+<th style="text-align: right;">P0739</th>
+<th style="text-align: right;">P0744</th>
+<th style="text-align: right;">P0758</th>
+<th style="text-align: right;">P0761</th>
+<th style="text-align: right;">P0773</th>
+<th style="text-align: right;">P0774</th>
+<th style="text-align: right;">P0785</th>
+<th style="text-align: right;">P0819</th>
+<th style="text-align: right;">P0825</th>
+<th style="text-align: right;">P0892</th>
+<th style="text-align: right;">P0994</th>
+<th style="text-align: right;">P1001</th>
+<th style="text-align: right;">P1006</th>
+<th style="text-align: right;">P1029</th>
+<th style="text-align: right;">P1043</th>
+<th style="text-align: right;">P1057</th>
+<th style="text-align: right;">P1060</th>
+<th style="text-align: right;">P1063</th>
+<th style="text-align: right;">P1067</th>
+<th style="text-align: right;">P1137</th>
+<th style="text-align: right;">P1154</th>
+<th style="text-align: right;">P1225</th>
+<th style="text-align: right;">P1295</th>
+<th style="text-align: right;">PID1013</th>
+<th style="text-align: right;">PID1015</th>
+<th style="text-align: right;">PID1016</th>
+<th style="text-align: right;">PID1022</th>
+<th style="text-align: right;">PID1024</th>
+<th style="text-align: right;">PID1035</th>
+<th style="text-align: right;">PID1036</th>
+<th style="text-align: right;">PID1039</th>
+<th style="text-align: right;">PID1045</th>
+<th style="text-align: right;">PID1046</th>
+<th style="text-align: right;">PID1065</th>
+<th style="text-align: right;">PID1068</th>
+<th style="text-align: right;">PID1077</th>
+<th style="text-align: right;">PID1081</th>
+<th style="text-align: right;">PID1086</th>
+<th style="text-align: right;">PID1091</th>
+<th style="text-align: right;">PID1092</th>
+<th style="text-align: right;">PID1095</th>
+<th style="text-align: right;">PID1098</th>
+<th style="text-align: right;">PID1102</th>
+<th style="text-align: right;">PID1113</th>
+<th style="text-align: right;">PID1122</th>
+<th style="text-align: right;">PID1128</th>
+<th style="text-align: right;">PID1133</th>
+<th style="text-align: right;">PID1137</th>
+<th style="text-align: right;">PID1165</th>
+<th style="text-align: right;">PID1167</th>
+<th style="text-align: right;">PID1170</th>
+<th style="text-align: right;">PID1171</th>
+<th style="text-align: right;">PID1173</th>
+<th style="text-align: right;">PID1176</th>
+<th style="text-align: right;">PID1177</th>
+<th style="text-align: right;">PID1179</th>
+<th style="text-align: right;">PID1192</th>
+<th style="text-align: right;">PID1199</th>
+<th style="text-align: right;">PID121</th>
+<th style="text-align: right;">PID1210</th>
+<th style="text-align: right;">PID1211</th>
+<th style="text-align: right;">PID1222</th>
+<th style="text-align: right;">PID1226</th>
+<th style="text-align: right;">PID1228</th>
+<th style="text-align: right;">PID1242</th>
+<th style="text-align: right;">PID1247</th>
+<th style="text-align: right;">PID1248</th>
+<th style="text-align: right;">PID1258</th>
+<th style="text-align: right;">PID1260</th>
+<th style="text-align: right;">PID1274</th>
+<th style="text-align: right;">PID1276</th>
+<th style="text-align: right;">PID1280</th>
+<th style="text-align: right;">PID1285</th>
+<th style="text-align: right;">PID1293</th>
+<th style="text-align: right;">PID1301</th>
+<th style="text-align: right;">PID1307</th>
+<th style="text-align: right;">PID1318</th>
+<th style="text-align: right;">PID1332</th>
+<th style="text-align: right;">PID1342</th>
+<th style="text-align: right;">PID1349</th>
+<th style="text-align: right;">PID1370</th>
+<th style="text-align: right;">PID1371</th>
+<th style="text-align: right;">PID1382</th>
+<th style="text-align: right;">PID1392</th>
+<th style="text-align: right;">PID1399</th>
+<th style="text-align: right;">PID1420</th>
+<th style="text-align: right;">PID1437</th>
+<th style="text-align: right;">PID1438</th>
+<th style="text-align: right;">PID1439</th>
+<th style="text-align: right;">PID1440</th>
+<th style="text-align: right;">PID1454</th>
+<th style="text-align: right;">PID1461</th>
+<th style="text-align: right;">PID1462</th>
+<th style="text-align: right;">PID1469</th>
+<th style="text-align: right;">PID1470</th>
+<th style="text-align: right;">PID1485</th>
+<th style="text-align: right;">PID1489</th>
+<th style="text-align: right;">PID1494</th>
+<th style="text-align: right;">PID1496</th>
+<th style="text-align: right;">PID1511</th>
+<th style="text-align: right;">PID1516</th>
+<th style="text-align: right;">PID1547</th>
+<th style="text-align: right;">PID1557</th>
+<th style="text-align: right;">PID1565</th>
+<th style="text-align: right;">PID1590</th>
+<th style="text-align: right;">PID1591</th>
+<th style="text-align: right;">PID1601</th>
+<th style="text-align: right;">PID1602</th>
+<th style="text-align: right;">PID1603</th>
+<th style="text-align: right;">PID1617</th>
+<th style="text-align: right;">PID1634</th>
+<th style="text-align: right;">PID1637</th>
+<th style="text-align: right;">PID1638</th>
+<th style="text-align: right;">PID1644</th>
+<th style="text-align: right;">PID1650</th>
+<th style="text-align: right;">PID1653</th>
+<th style="text-align: right;">PID1663</th>
+<th style="text-align: right;">PID1673</th>
+<th style="text-align: right;">PID1677</th>
+<th style="text-align: right;">PID1678</th>
+<th style="text-align: right;">PID1684</th>
+<th style="text-align: right;">PID1705</th>
+<th style="text-align: right;">PID1732</th>
+<th style="text-align: right;">PID1761</th>
+<th style="text-align: right;">PID1784</th>
+<th style="text-align: right;">PID1791</th>
+<th style="text-align: right;">PID1876</th>
+<th style="text-align: right;">PID1877</th>
+<th style="text-align: right;">PID1912</th>
+<th style="text-align: right;">PID1976</th>
+<th style="text-align: right;">PID1997</th>
+<th style="text-align: right;">PID2031</th>
+<th style="text-align: right;">PID2036</th>
+<th style="text-align: right;">PID2060</th>
+<th style="text-align: right;">PID2072</th>
+<th style="text-align: right;">PID2089</th>
+<th style="text-align: right;">PID2115</th>
+<th style="text-align: right;">PID2202</th>
+<th style="text-align: right;">PID2224</th>
+<th style="text-align: right;">PID2233</th>
+<th style="text-align: right;">PID229</th>
+<th style="text-align: right;">PID2304</th>
+<th style="text-align: right;">PID239</th>
+<th style="text-align: right;">PID2431</th>
+<th style="text-align: right;">PID263</th>
+<th style="text-align: right;">PID305</th>
+<th style="text-align: right;">PID436</th>
+<th style="text-align: right;">PID450</th>
+<th style="text-align: right;">PID512</th>
+<th style="text-align: right;">PID518</th>
+<th style="text-align: right;">PID528</th>
+<th style="text-align: right;">PID647</th>
+<th style="text-align: right;">PID674</th>
+<th style="text-align: right;">PID675</th>
+<th style="text-align: right;">PID74</th>
+<th style="text-align: right;">PID770</th>
+<th style="text-align: right;">PID865</th>
+<th style="text-align: right;">PID884</th>
+<th style="text-align: right;">PID889</th>
+<th style="text-align: right;">PID894</th>
+<th style="text-align: right;">PID898</th>
+<th style="text-align: right;">PID901</th>
+<th style="text-align: right;">PID903</th>
+<th style="text-align: right;">PID909</th>
+<th style="text-align: right;">PID951</th>
+<th style="text-align: right;">PID952</th>
+<th style="text-align: right;">PID955</th>
+<th style="text-align: right;">PID957</th>
+<th style="text-align: right;">PID963</th>
+<th style="text-align: right;">PID970</th>
+<th style="text-align: right;">PID976</th>
+<th style="text-align: right;">PID982</th>
+<th style="text-align: right;">PID985</th>
+<th style="text-align: right;">PID988</th>
+<th style="text-align: right;">PID989</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">PID1712</td>
 <td style="text-align: right;">7</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1564</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID497</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID935</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0050</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0314</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0353</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0777</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1191</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1457</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1691</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1913</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID859</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID934</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID940</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0508</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0734</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1009</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1023</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1146</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1201</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1203</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1229</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1264</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1340</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1418</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1419</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1662</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1844</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2105</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0641</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0782</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1151</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1014</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1027</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID110</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1109</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1200</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1246</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1344</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1350</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1359</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1450</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1456</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1517</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1561</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1579</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1624</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1670</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1694</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1704</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1893</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1982</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2168</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID279</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID301</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID883</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID907</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID961</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0034</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0057</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0350</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0361</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0435</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0444</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0453</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0511</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0520</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0527</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0534</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0535</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0573</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0584</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0599</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0680</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0682</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0683</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0709</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0710</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0739</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0744</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0758</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0761</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0773</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0774</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0785</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0819</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0825</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0892</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0994</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1001</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1006</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1029</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1043</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1057</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1060</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1063</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1067</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1137</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1154</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P1225</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P1295</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1013</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1015</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1016</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1022</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1024</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1035</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1039</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1045</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1046</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1065</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1068</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1077</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1081</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1086</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1091</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1092</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1095</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1098</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1102</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1113</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1122</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1128</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1133</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1137</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1165</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1167</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1170</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1171</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1173</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1176</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1177</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1179</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1192</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1199</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID121</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1210</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1211</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1222</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1226</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1228</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1242</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1247</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1248</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1258</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1260</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1274</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1276</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1280</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1285</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1293</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1301</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1307</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1318</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1332</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1342</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1349</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1370</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1371</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1382</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1392</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1399</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1420</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1437</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1438</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1439</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1440</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1454</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1461</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1462</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1469</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1470</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1485</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1489</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1494</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1496</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1511</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1516</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1547</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1557</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1565</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1590</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1591</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1601</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1602</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1603</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1617</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1634</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1637</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1638</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1644</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1650</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1653</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1663</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1673</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1677</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1678</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1684</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1705</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1732</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1761</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1784</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1791</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1876</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1877</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1912</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1976</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1997</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2031</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2060</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2072</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2089</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2115</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2202</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2224</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2233</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID229</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2304</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID239</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2431</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID263</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID305</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID436</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID450</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID512</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID518</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID528</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID647</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID674</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID675</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID74</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID770</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID865</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID884</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID889</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID894</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID898</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID901</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID903</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID909</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID951</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID952</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID955</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID957</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID963</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID970</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID976</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID982</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID985</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID988</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID989</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
@@ -3429,658 +2905,499 @@ Done cluster 2387 </code></pre>
 </table>
 </div>
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>patNum <span class="ot">&lt;-</span> <span class="fu">sort</span>(<span class="fu">table</span>(pcTab<span class="sc">$</span>patID), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(patNum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">t</span>(patNum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Var1</th>
-<th style="text-align: right;">Freq</th>
+<th style="text-align: right;">PID1564</th>
+<th style="text-align: right;">PID497</th>
+<th style="text-align: right;">PID935</th>
+<th style="text-align: right;">P0050</th>
+<th style="text-align: right;">P0314</th>
+<th style="text-align: right;">P0353</th>
+<th style="text-align: right;">P0777</th>
+<th style="text-align: right;">PID1191</th>
+<th style="text-align: right;">PID1457</th>
+<th style="text-align: right;">PID1691</th>
+<th style="text-align: right;">PID1913</th>
+<th style="text-align: right;">PID859</th>
+<th style="text-align: right;">PID934</th>
+<th style="text-align: right;">PID940</th>
+<th style="text-align: right;">P0508</th>
+<th style="text-align: right;">P0734</th>
+<th style="text-align: right;">PID1009</th>
+<th style="text-align: right;">PID1023</th>
+<th style="text-align: right;">PID1146</th>
+<th style="text-align: right;">PID1201</th>
+<th style="text-align: right;">PID1203</th>
+<th style="text-align: right;">PID1229</th>
+<th style="text-align: right;">PID1264</th>
+<th style="text-align: right;">PID1340</th>
+<th style="text-align: right;">PID1419</th>
+<th style="text-align: right;">PID1662</th>
+<th style="text-align: right;">PID1844</th>
+<th style="text-align: right;">PID2105</th>
+<th style="text-align: right;">P0641</th>
+<th style="text-align: right;">PID1027</th>
+<th style="text-align: right;">PID110</th>
+<th style="text-align: right;">PID1200</th>
+<th style="text-align: right;">PID1246</th>
+<th style="text-align: right;">PID1450</th>
+<th style="text-align: right;">PID1517</th>
+<th style="text-align: right;">PID1624</th>
+<th style="text-align: right;">PID1670</th>
+<th style="text-align: right;">PID1704</th>
+<th style="text-align: right;">PID1893</th>
+<th style="text-align: right;">PID2168</th>
+<th style="text-align: right;">PID279</th>
+<th style="text-align: right;">PID301</th>
+<th style="text-align: right;">PID883</th>
+<th style="text-align: right;">PID907</th>
+<th style="text-align: right;">PID1013</th>
+<th style="text-align: right;">PID1015</th>
+<th style="text-align: right;">PID1016</th>
+<th style="text-align: right;">PID1022</th>
+<th style="text-align: right;">PID1024</th>
+<th style="text-align: right;">PID1035</th>
+<th style="text-align: right;">PID1036</th>
+<th style="text-align: right;">PID1065</th>
+<th style="text-align: right;">PID1068</th>
+<th style="text-align: right;">PID1077</th>
+<th style="text-align: right;">PID1086</th>
+<th style="text-align: right;">PID1091</th>
+<th style="text-align: right;">PID1095</th>
+<th style="text-align: right;">PID1098</th>
+<th style="text-align: right;">PID1102</th>
+<th style="text-align: right;">PID1128</th>
+<th style="text-align: right;">PID1133</th>
+<th style="text-align: right;">PID1165</th>
+<th style="text-align: right;">PID1167</th>
+<th style="text-align: right;">PID1171</th>
+<th style="text-align: right;">PID1173</th>
+<th style="text-align: right;">PID1176</th>
+<th style="text-align: right;">PID1177</th>
+<th style="text-align: right;">PID1179</th>
+<th style="text-align: right;">PID1192</th>
+<th style="text-align: right;">PID1199</th>
+<th style="text-align: right;">PID121</th>
+<th style="text-align: right;">PID1210</th>
+<th style="text-align: right;">PID1211</th>
+<th style="text-align: right;">PID1222</th>
+<th style="text-align: right;">PID1226</th>
+<th style="text-align: right;">PID1228</th>
+<th style="text-align: right;">PID1242</th>
+<th style="text-align: right;">PID1247</th>
+<th style="text-align: right;">PID1248</th>
+<th style="text-align: right;">PID1260</th>
+<th style="text-align: right;">PID1274</th>
+<th style="text-align: right;">PID1276</th>
+<th style="text-align: right;">PID1280</th>
+<th style="text-align: right;">PID1285</th>
+<th style="text-align: right;">PID1293</th>
+<th style="text-align: right;">PID1301</th>
+<th style="text-align: right;">PID1307</th>
+<th style="text-align: right;">PID1318</th>
+<th style="text-align: right;">PID1332</th>
+<th style="text-align: right;">PID1342</th>
+<th style="text-align: right;">PID1349</th>
+<th style="text-align: right;">PID1382</th>
+<th style="text-align: right;">PID1392</th>
+<th style="text-align: right;">PID1399</th>
+<th style="text-align: right;">PID1437</th>
+<th style="text-align: right;">PID1438</th>
+<th style="text-align: right;">PID1439</th>
+<th style="text-align: right;">PID1440</th>
+<th style="text-align: right;">PID1454</th>
+<th style="text-align: right;">PID1461</th>
+<th style="text-align: right;">PID1462</th>
+<th style="text-align: right;">PID1469</th>
+<th style="text-align: right;">PID1489</th>
+<th style="text-align: right;">PID1494</th>
+<th style="text-align: right;">PID1496</th>
+<th style="text-align: right;">PID1511</th>
+<th style="text-align: right;">PID1547</th>
+<th style="text-align: right;">PID1561</th>
+<th style="text-align: right;">PID1565</th>
+<th style="text-align: right;">PID1590</th>
+<th style="text-align: right;">PID1591</th>
+<th style="text-align: right;">PID1601</th>
+<th style="text-align: right;">PID1602</th>
+<th style="text-align: right;">PID1617</th>
+<th style="text-align: right;">PID1634</th>
+<th style="text-align: right;">PID1637</th>
+<th style="text-align: right;">PID1638</th>
+<th style="text-align: right;">PID1644</th>
+<th style="text-align: right;">PID1650</th>
+<th style="text-align: right;">PID1673</th>
+<th style="text-align: right;">PID1678</th>
+<th style="text-align: right;">PID1694</th>
+<th style="text-align: right;">PID1705</th>
+<th style="text-align: right;">PID1761</th>
+<th style="text-align: right;">PID1791</th>
+<th style="text-align: right;">PID1876</th>
+<th style="text-align: right;">PID1877</th>
+<th style="text-align: right;">PID1976</th>
+<th style="text-align: right;">PID1997</th>
+<th style="text-align: right;">PID2031</th>
+<th style="text-align: right;">PID2036</th>
+<th style="text-align: right;">PID2060</th>
+<th style="text-align: right;">PID2072</th>
+<th style="text-align: right;">PID2089</th>
+<th style="text-align: right;">PID2115</th>
+<th style="text-align: right;">PID2202</th>
+<th style="text-align: right;">PID2233</th>
+<th style="text-align: right;">PID229</th>
+<th style="text-align: right;">PID2304</th>
+<th style="text-align: right;">PID239</th>
+<th style="text-align: right;">PID263</th>
+<th style="text-align: right;">PID305</th>
+<th style="text-align: right;">PID436</th>
+<th style="text-align: right;">PID512</th>
+<th style="text-align: right;">PID518</th>
+<th style="text-align: right;">PID528</th>
+<th style="text-align: right;">PID674</th>
+<th style="text-align: right;">PID675</th>
+<th style="text-align: right;">PID74</th>
+<th style="text-align: right;">PID884</th>
+<th style="text-align: right;">PID894</th>
+<th style="text-align: right;">PID898</th>
+<th style="text-align: right;">PID901</th>
+<th style="text-align: right;">PID909</th>
+<th style="text-align: right;">PID951</th>
+<th style="text-align: right;">PID952</th>
+<th style="text-align: right;">PID955</th>
+<th style="text-align: right;">PID957</th>
+<th style="text-align: right;">PID963</th>
+<th style="text-align: right;">PID970</th>
+<th style="text-align: right;">PID982</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">PID1564</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID497</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID935</td>
 <td style="text-align: right;">5</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0050</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0314</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0353</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0777</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1191</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1457</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1691</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1913</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID859</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID934</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID940</td>
 <td style="text-align: right;">4</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0508</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">P0734</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1009</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1023</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1146</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1201</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1203</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1229</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1264</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1340</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1419</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1662</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1844</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2105</td>
 <td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">P0641</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1027</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID110</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1200</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1246</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1450</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1517</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1624</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1670</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1704</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1893</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2168</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID279</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID301</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID883</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID907</td>
 <td style="text-align: right;">2</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1013</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1015</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1016</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1022</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1024</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1035</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1065</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1068</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1077</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1086</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1091</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1095</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1098</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1102</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1128</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1133</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1165</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1167</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1171</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1173</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1176</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1177</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1179</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1192</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1199</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID121</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1210</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1211</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1222</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1226</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1228</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1242</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1247</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1248</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1260</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1274</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1276</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1280</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1285</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1293</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1301</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1307</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1318</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1332</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1342</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1349</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1382</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1392</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1399</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1437</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1438</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1439</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1440</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1454</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1461</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1462</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1469</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1489</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1494</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1496</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1511</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1547</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1561</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1565</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1590</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1591</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1601</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1602</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1617</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1634</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1637</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1638</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1644</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1650</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1673</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1678</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1694</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1705</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1761</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1791</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1876</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1877</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID1976</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID1997</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2031</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2036</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2060</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2072</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2089</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2115</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID2202</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2233</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID229</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID2304</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID239</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID263</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID305</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID436</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID512</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID518</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID528</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID674</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID675</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID74</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID884</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID894</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID898</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID901</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID909</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID951</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID952</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID955</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID957</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID963</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">PID970</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">PID982</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;">1</td>
 </tr>
 </tbody>
