@@ -345,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="generalized-linear-model" class="level3">
 <h3 class="anchored" data-anchor-id="generalized-linear-model">Generalized Linear Model</h3>
-<p>remove “S454563” that perhaps is a mis-annotation sample</p>
+<p>remove “S454563” that perhaps is a wrong annotation sample</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run lm </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1374</span>)</span>
@@ -366,9 +366,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 24.421   0.124  24.546 </code></pre>
+ 24.947   0.281  25.269 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>errSpec <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="st">"cll2hcl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualization" class="level3">
@@ -590,9 +593,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 61.631   0.163  61.800 </code></pre>
+ 61.363   0.326  61.740 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>errSpec <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="st">"cll2mcl"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(errSpec, .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualization-1" class="level3">
@@ -764,10 +771,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span> <span class="fu">p.adjust</span>(<span class="st">"BH"</span>)</span>
 <span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(pvalTab_diag[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>         PC7          PC5          PC1          PC8          PC2          PC3 
-2.962604e-05 6.267409e-04 1.755471e-03 6.390301e-03 9.501950e-02 2.894884e-01 
-         PC4          PC6          PC9         PC10 
-9.935852e-01 9.935852e-01 9.935852e-01 9.935852e-01 </code></pre>
+<pre><code>         PC5          PC7          PC1          PC8          PC6          PC2 
+0.0003161223 0.0003869073 0.0008048270 0.0162126317 0.0197598175 0.0561753775 
+         PC3          PC4          PC9         PC10 
+0.2186064061 0.9929100620 0.9929100620 0.9929100620 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PC plot</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>plotPc <span class="sc">%&gt;%</span></span>
@@ -829,9 +836,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 48.130   0.245  48.383 </code></pre>
+ 50.732   0.369  51.179 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>errSpec <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="st">"cll2other"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(errSpec, .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualization-2" class="level3">
@@ -918,7 +929,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 5927 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 5932 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Spec_DE_files/figure-html/unnamed-chunk-11-4.png" class="img-fluid" width="672"></p>
@@ -996,10 +1007,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span> <span class="fu">p.adjust</span>(<span class="st">"BH"</span>)</span>
 <span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(pvalTab_diag[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       PC8        PC1        PC9        PC2        PC3        PC4        PC5 
-0.05806022 0.40082909 0.88580388 0.99939671 0.99939671 0.99939671 0.99939671 
-       PC6        PC7       PC10 
-0.99939671 0.99939671 0.99939671 </code></pre>
+<pre><code>       PC8        PC1        PC2        PC3        PC4        PC5        PC6 
+0.01496144 0.93457299 0.99906753 0.99906753 0.99906753 0.99906753 0.99906753 
+       PC7        PC9       PC10 
+0.99906753 0.99906753 0.99906753 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PC plot</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>plotPc <span class="sc">%&gt;%</span></span>
@@ -1061,9 +1072,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 12.010   0.079  12.089 </code></pre>
+ 13.647   0.056  13.709 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>errSpec <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="st">"cll2smzl"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(errSpec, .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualization-3" class="level3">
@@ -1150,7 +1165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 5937 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 5939 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Spec_DE_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid" width="672"></p>
@@ -1229,10 +1244,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span> <span class="fu">p.adjust</span>(<span class="st">"BH"</span>)</span>
 <span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(pvalTab_diag[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>        PC7         PC8         PC6         PC9         PC2         PC1 
-0.006729104 0.006729104 0.048705743 0.048705743 0.143449585 0.191908046 
-        PC4         PC3         PC5        PC10 
-0.288661734 0.997876122 0.997876122 0.997876122 </code></pre>
+<pre><code>       PC6        PC8        PC7        PC9        PC1        PC4        PC2 
+0.02347877 0.02347877 0.02675701 0.12248596 0.41623127 0.52317678 0.53243442 
+       PC3        PC5       PC10 
+0.99907441 0.99907441 0.99907441 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PC plot</span></span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>plotPc <span class="sc">%&gt;%</span></span>
@@ -1294,9 +1309,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 13.822   0.057  13.880 </code></pre>
+ 10.677   0.081  10.762 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>errSpec <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">data =</span> <span class="st">"cll2mzl"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(errSpec, .)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="visualization-4" class="level3">
@@ -1435,6 +1454,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section"></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(errSpec, <span class="at">file =</span> <span class="st">"output/errSpec.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
