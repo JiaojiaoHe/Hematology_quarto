@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Hematology Disease Analysis",
     "section": "",
-    "text": "Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of DiannandSpectronaut\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation, dimension reduction, batch removal and visualization.\n\nDiann\nSpectronaut\n\n\n\n\n\nDiann\nSpectronaut"
+    "text": "The data contains 399 samples with &gt;9000 proteins in Diann and &gt; 8000 proteins in Spectronaut. Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of DiannandSpectronaut\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation, dimension reduction, batch removal and visualization.\n\nDiann\nSpectronaut\n\n\n\n\nDiscover the biomarkers that are able to distinguish CLL with other blood cancer\n\nDiann\nSpectronaut\nerrors\n\n\n\n\nHere the data is old data, which contains 91 samples and 3314 proteins. Find the biomarkers to differentiate Trisomy12 as well as IGHV mutation status.\n\nTrisomy12 and IGHV"
   },
   {
     "objectID": "index.html#preparatory-data-analysis",
     "href": "index.html#preparatory-data-analysis",
     "title": "Hematology Disease Analysis",
     "section": "",
-    "text": "Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of DiannandSpectronaut\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation, dimension reduction, batch removal and visualization.\n\nDiann\nSpectronaut\n\n\n\n\n\nDiann\nSpectronaut"
+    "text": "The data contains 399 samples with &gt;9000 proteins in Diann and &gt; 8000 proteins in Spectronaut. Explore the raw data with metadata, extract the information of interest and convert to Summarized Experiment object\n\nDiann and Spectronaut\n\n\n\n\nCompare Diann and Spectronaut quality.\n\nComparison of DiannandSpectronaut\n\n\n\n\nValues: apply filtering, variance stabilizing normalization, imputation, dimension reduction, batch removal and visualization.\n\nDiann\nSpectronaut\n\n\n\n\nDiscover the biomarkers that are able to distinguish CLL with other blood cancer\n\nDiann\nSpectronaut\nerrors\n\n\n\n\nHere the data is old data, which contains 91 samples and 3314 proteins. Find the biomarkers to differentiate Trisomy12 as well as IGHV mutation status.\n\nTrisomy12 and IGHV"
   },
   {
     "objectID": "Diann_QC.html",
