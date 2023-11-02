@@ -356,13 +356,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1374</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[(<span class="fu">sum</span>(y)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">which</span>(y <span class="sc">==</span> <span class="dv">0</span>))</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> cll2hcl.mat[smpIdx, ]</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">sum</span>(<span class="sc">!</span>y),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">length</span>(y[smpIdx]),</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
@@ -371,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 27.266   0.267  27.550 </code></pre>
+ 53.987   0.329  54.408 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -464,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 6538 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 6540 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Diann_DE_files/figure-html/unnamed-chunk-5-4.png" class="img-fluid" width="672"></p>
@@ -583,13 +583,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">849</span>)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[(<span class="fu">sum</span>(y)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">which</span>(y <span class="sc">==</span> <span class="dv">0</span>))</span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> cll2mcl.mat[smpIdx, ]</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
 <span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">sum</span>(<span class="sc">!</span>y),</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">length</span>(y[smpIdx]),</span>
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span> </span>
 <span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
@@ -598,7 +598,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 68.899   0.385  69.339 </code></pre>
+136.422   0.528 137.023 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -691,7 +691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 6553 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 6557 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Diann_DE_files/figure-html/unnamed-chunk-8-4.png" class="img-fluid" width="672"></p>
@@ -829,13 +829,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">29</span>)</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[(<span class="fu">sum</span>(y)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">which</span>(y <span class="sc">==</span> <span class="dv">0</span>))</span>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> cll2other.mat_batch[smpIdx, ]</span>
 <span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
 <span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
 <span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">sum</span>(<span class="sc">!</span>y),</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">length</span>(y[smpIdx]),</span>
 <span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
 <span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span> </span>
 <span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
@@ -844,7 +844,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 55.425   0.386  55.874 </code></pre>
+109.561   0.392 110.022 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1065,13 +1065,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">29384</span>)</span>
 <span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[(<span class="fu">sum</span>(y)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">which</span>(y <span class="sc">==</span> <span class="dv">0</span>))</span>
 <span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> cll2smzl.mat_batch[smpIdx, ]</span>
 <span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
 <span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
 <span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">sum</span>(<span class="sc">!</span>y),</span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">length</span>(y[smpIdx]),</span>
 <span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
 <span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span> </span>
 <span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
@@ -1080,7 +1080,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 14.583   0.192  14.828 </code></pre>
+ 27.575   0.134  27.745 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1173,7 +1173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 6536 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 6553 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Diann_DE_files/figure-html/unnamed-chunk-14-4.png" class="img-fluid" width="672"></p>
@@ -1302,13 +1302,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">228282</span>)</span>
 <span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[(<span class="fu">sum</span>(y)<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="dv">1</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y)], <span class="fu">sum</span>(<span class="sc">!</span>y), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">which</span>(y <span class="sc">==</span> <span class="dv">0</span>))</span>
 <span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> cll2mzl.mat_batch[smpIdx, ]</span>
 <span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
 <span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
 <span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
 <span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">sum</span>(<span class="sc">!</span>y),</span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="fu">length</span>(y[smpIdx]),</span>
 <span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
 <span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span> </span>
 <span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
@@ -1317,7 +1317,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 11.772   0.100  11.897 </code></pre>
+ 21.324   0.081  21.424 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1410,7 +1410,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 6537 rows containing missing values (`geom_label()`).</code></pre>
+<pre><code>Warning: Removed 6540 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Diann_DE_files/figure-html/unnamed-chunk-17-4.png" class="img-fluid" width="672"></p>
