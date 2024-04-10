@@ -206,29 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-visualisation" class="level1">
 <h1>Data Visualisation</h1>
 <div class="cell">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gender</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>countDF <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(gender) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">smpID =</span> <span class="fu">factor</span>(smpID, <span class="at">levels =</span> <span class="fu">unique</span>(smpID))) <span class="sc">%&gt;%</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> smpID, <span class="at">y =</span> count, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="at">m =</span> <span class="st">"lightblue"</span>, <span class="at">f =</span> <span class="st">"#2C537C"</span>)) <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 386100 rows containing non-finite values (`stat_boxplot()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IGHV status</span></span>
-========
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gender</span></span>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>countDF <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(gender) <span class="sc">%&gt;%</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">smpID =</span> <span class="fu">factor</span>(smpID, <span class="at">levels =</span> <span class="fu">unique</span>(smpID))) <span class="sc">%&gt;%</span></span>
@@ -244,9 +222,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: Removed 386100 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IGHV status</span></span>
@@ -266,7 +241,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output-display">
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 </div>
 </section>
@@ -329,11 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 </div>
 </section>
@@ -359,11 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>))  <span class="sc">+</span> </span>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>),<span class="at">label =</span> <span class="st">"-log(0.05)"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.combat &lt;- sva::ComBat(t(assay.imp), batch = patDF$diagnosis)</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.fil &lt;- removeCorrelatedTargets(t(assay.combat))$reduced</span></span>
@@ -438,11 +404,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: Removed 5844 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heatmap</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>colAnno <span class="ot">&lt;-</span> patDF <span class="sc">%&gt;%</span> </span>
@@ -460,11 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_colors =</span> mat_colors,</span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span></span>
@@ -481,9 +439,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Spectronaut_zurich.html
-<p><img src="Spectronaut_zurich_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="864"></p>
 </div>
 </div>
@@ -674,7 +629,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Spectronaut_IGHV_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Spectronaut_IGHV.html
 </div>
 </div>
 

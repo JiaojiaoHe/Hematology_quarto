@@ -218,11 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: Removed 506333 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IGHV status</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>countDF <span class="sc">%&gt;%</span></span>
@@ -240,11 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Warning: Removed 506333 rows containing non-finite values (`stat_boxplot()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
 </div>
 </section>
@@ -307,11 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
 </div>
 </section>
@@ -337,11 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>)) <span class="sc">+</span></span>
 <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>),<span class="at">label =</span> <span class="st">"-log(0.05)"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.combat &lt;- sva::ComBat(t(assay.imp), batch = patDF$diagnosis)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.fil &lt;- removeCorrelatedTargets(t(assay.combat))$reduced</span></span>
@@ -400,82 +384,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(geneID)`</code></pre>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There were 3 warnings in `mutate()`.
-The first warning was:
-ℹ In argument: `coefficient = case_when(...)`.
-Caused by warning in `frequency &gt;= cutoff`:
-! longer object length is not a multiple of shorter object length
-ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean, <span class="at">y =</span> frequency, <span class="at">col =</span> coefficient)) <span class="sc">+</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"dodgerblue3"</span>, <span class="st">"gray50"</span>, <span class="st">"firebrick3"</span>)) <span class="sc">+</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> cutoff, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average coefficients"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>) <span class="sc">+</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean, <span class="at">y =</span> frequency, <span class="at">col =</span> coefficient)) <span class="sc">+</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"dodgerblue3"</span>, <span class="st">"gray50"</span>, <span class="st">"firebrick3"</span>)) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> cutoff, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average coefficients"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 6650 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heatmap</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>colAnno <span class="ot">&lt;-</span> patDF <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(smpID, IGHV) <span class="sc">%&gt;%</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(IGHV) <span class="sc">%&gt;%</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"smpID"</span>)</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>mat_colors <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">IGHV =</span> <span class="fu">c</span>(<span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#15A371"</span>, <span class="st">"U"</span> <span class="ot">=</span> <span class="st">"#F2D39B"</span>))</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>heatData <span class="ot">&lt;-</span> <span class="fu">t</span>(assay.fil[<span class="fu">rownames</span>(colAnno), sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID])</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(heatData) <span class="ot">&lt;-</span> sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>pheatmap<span class="sc">::</span><span class="fu">pheatmap</span>(heatData, </span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">treeheight_row =</span> <span class="dv">0</span>, <span class="at">treeheight_col =</span> <span class="dv">0</span>,</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_colnames =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_col =</span> colAnno, </span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_colors =</span> mat_colors,</span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heatmap</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>colAnno <span class="ot">&lt;-</span> patDF <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(smpID, IGHV) <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(IGHV) <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"smpID"</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>mat_colors <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">IGHV =</span> <span class="fu">c</span>(<span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#15A371"</span>, <span class="st">"U"</span> <span class="ot">=</span> <span class="st">"#F2D39B"</span>))</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>heatData <span class="ot">&lt;-</span> <span class="fu">t</span>(assay.fil[<span class="fu">rownames</span>(colAnno), sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID])</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(heatData) <span class="ot">&lt;-</span> sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>pheatmap<span class="sc">::</span><span class="fu">pheatmap</span>(heatData, </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">treeheight_row =</span> <span class="dv">0</span>, <span class="at">treeheight_col =</span> <span class="dv">0</span>,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_colnames =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_col =</span> colAnno, </span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_colors =</span> mat_colors,</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="864"></p>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(frequency <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">geneID =</span> <span class="fu">factor</span>(geneID, <span class="at">levels =</span> geneID)) <span class="sc">%&gt;%</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> geneID, <span class="at">y =</span> mean, <span class="at">fill =</span> geneID)) <span class="sc">+</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Coefficients"</span>) <span class="sc">+</span> </span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, <span class="at">ymax =</span> mean <span class="sc">+</span> sd),  <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `filter()`.
-ℹ In argument: `frequency &gt;= cutoff`.
-Caused by warning in `frequency &gt;= cutoff`:
-! longer object length is not a multiple of shorter object length</code></pre>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
-</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(frequency <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">geneID =</span> <span class="fu">factor</span>(geneID, <span class="at">levels =</span> geneID)) <span class="sc">%&gt;%</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> geneID, <span class="at">y =</span> mean, <span class="at">fill =</span> geneID)) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Coefficients"</span>) <span class="sc">+</span> </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, <span class="at">ymax =</span> mean <span class="sc">+</span> sd),  <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<<<<<<<< HEAD:docs/Diann_zurich.html
-<p><img src="Diann_zurich_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="864"></p>
-========
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-6-3.png" class="img-fluid" width="864"></p>
 </div>
 </div>
@@ -483,37 +442,37 @@ Caused by warning in `frequency &gt;= cutoff`:
 <section id="cll-samples" class="level1">
 <h1>CLL samples</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # fitler out high missing-rate features and apply variance stablization normalisation</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- seDiann[, patDF[patDF$diagnosis == "CLL", ]$smpID]</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- seSub[rowSums(is.na(assay(seSub)))/ncol(seSub) &lt; 0.5, ]</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># exprMat.vst &lt;- vsn::justvsn(assays(seSub)$count)</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- SummarizedExperiment(assays = exprMat.vst,</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co">#                               colData = colData(seSub),</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">#                               rowData = rowData(seSub))</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.imp &lt;- DEP::impute(seSub, "bpca") %&gt;%</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   assay() %&gt;%</span></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   t()</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(assay.imp, "output/Diann_CLL_assay.imp.csv")</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>assay.imp <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"output/Diann_CLL_assay.imp.csv"</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="st">"X"</span>)</span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>pcRes <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(assay.imp, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>pcTab <span class="ot">&lt;-</span> pcRes<span class="sc">$</span>x <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(patDF) <span class="sc">%&gt;%</span></span>
-<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IGHV =</span> <span class="fu">factor</span>(IGHV))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # fitler out high missing-rate features and apply variance stablization normalisation</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- seDiann[, patDF[patDF$diagnosis == "CLL", ]$smpID]</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- seSub[rowSums(is.na(assay(seSub)))/ncol(seSub) &lt; 0.5, ]</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># exprMat.vst &lt;- vsn::justvsn(assays(seSub)$count)</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># seSub &lt;- SummarizedExperiment(assays = exprMat.vst,</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#                               colData = colData(seSub),</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#                               rowData = rowData(seSub))</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.imp &lt;- DEP::impute(seSub, "bpca") %&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#   assay() %&gt;%</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   t()</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(assay.imp, "output/Diann_CLL_assay.imp.csv")</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>assay.imp <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"output/Diann_CLL_assay.imp.csv"</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="st">"X"</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>pcRes <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(assay.imp, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>pcTab <span class="ot">&lt;-</span> pcRes<span class="sc">$</span>x <span class="sc">%&gt;%</span> <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"smpID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(patDF) <span class="sc">%&gt;%</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IGHV =</span> <span class="fu">factor</span>(IGHV))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(smpID)`</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>facVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"IGHV"</span>, <span class="st">"gender"</span>, <span class="st">"pelletSize(1E6)"</span>, <span class="st">"sampleType"</span>, <span class="st">"sampleWaitingTime(days)"</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>pvalTab <span class="ot">&lt;-</span> <span class="fu">lapply</span>(facVec, <span class="cf">function</span>(fac){</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(fac)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="fu">colnames</span>(pcRes<span class="sc">$</span>x), <span class="cf">function</span>(pc){</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ifelse</span>(fac <span class="sc">==</span> <span class="st">"pelletSize(1E6)"</span>,</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">cor.test</span>(pcTab[[pc]], pcTab<span class="sc">$</span><span class="st">'pelletSize(1E6)'</span>, <span class="at">method =</span> <span class="st">"kendall"</span>)<span class="sc">$</span>p.value,</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">kruskal.test</span>(pcTab[[pc]], pcTab[[fac]])<span class="sc">$</span>p.value)</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span> <span class="fu">p.adjust</span>(<span class="st">"BH"</span>)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(bind_rows, .) <span class="sc">%&gt;%</span></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>facVec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"IGHV"</span>, <span class="st">"gender"</span>, <span class="st">"pelletSize(1E6)"</span>, <span class="st">"sampleType"</span>, <span class="st">"sampleWaitingTime(days)"</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>pvalTab <span class="ot">&lt;-</span> <span class="fu">lapply</span>(facVec, <span class="cf">function</span>(fac){</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(fac)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(<span class="fu">colnames</span>(pcRes<span class="sc">$</span>x), <span class="cf">function</span>(pc){</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ifelse</span>(fac <span class="sc">==</span> <span class="st">"pelletSize(1E6)"</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">cor.test</span>(pcTab[[pc]], pcTab<span class="sc">$</span><span class="st">'pelletSize(1E6)'</span>, <span class="at">method =</span> <span class="st">"kendall"</span>)<span class="sc">$</span>p.value,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">kruskal.test</span>(pcTab[[pc]], pcTab[[fac]])<span class="sc">$</span>p.value)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>    }) <span class="sc">%&gt;%</span> <span class="fu">p.adjust</span>(<span class="st">"BH"</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>}) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(bind_rows, .) <span class="sc">%&gt;%</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "IGHV"
 [1] "gender"
@@ -521,152 +480,151 @@ Caused by warning in `frequency &gt;= cutoff`:
 [1] "sampleType"
 [1] "sampleWaitingTime(days)"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pvalTab) <span class="ot">&lt;-</span> facVec</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(<span class="fu">arrange</span>(pvalTab, IGHV))[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="co"># the most related PCs to IGHV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pvalTab) <span class="ot">&lt;-</span> facVec</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(<span class="fu">arrange</span>(pvalTab, IGHV))[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="co"># the most related PCs to IGHV</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "PC10" "PC4" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>pcTab <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PC4, <span class="at">y =</span> PC10, <span class="at">col =</span> IGHV)) <span class="sc">+</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pcTab <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PC4, <span class="at">y =</span> PC10, <span class="at">col =</span> IGHV)) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="864"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fu">log</span>(pvalTab)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ] <span class="sc">%&gt;%</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variance =</span> <span class="fu">round</span>(<span class="fu">summary</span>(pcRes)<span class="sc">$</span>importance[<span class="st">"Proportion of Variance"</span>, ][<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>] , <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">100</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"PC"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PC =</span> <span class="fu">paste0</span>(PC, <span class="st">"</span><span class="sc">\n</span><span class="st"> ("</span>, variance, <span class="st">"%)"</span>),</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">PC =</span> <span class="fu">factor</span>(PC, <span class="at">levels =</span> PC)) <span class="sc">%&gt;%</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">"variance"</span>, <span class="st">"PC"</span>), <span class="at">names_to =</span> <span class="st">"factors"</span>, <span class="at">values_to =</span> <span class="st">"-log(adj.p-value)"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PC, <span class="at">y =</span> <span class="st">`</span><span class="at">-log(adj.p-value)</span><span class="st">`</span>, <span class="at">fill =</span> factors)) <span class="sc">+</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Spectral"</span>) <span class="sc">+</span> </span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>)) <span class="sc">+</span> </span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>),<span class="at">label =</span> <span class="st">"-log(0.05)"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span><span class="fu">log</span>(pvalTab)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, ] <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variance =</span> <span class="fu">round</span>(<span class="fu">summary</span>(pcRes)<span class="sc">$</span>importance[<span class="st">"Proportion of Variance"</span>, ][<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>] , <span class="dv">3</span>) <span class="sc">*</span> <span class="dv">100</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rownames_to_column</span>(<span class="st">"PC"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PC =</span> <span class="fu">paste0</span>(PC, <span class="st">"</span><span class="sc">\n</span><span class="st"> ("</span>, variance, <span class="st">"%)"</span>),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">PC =</span> <span class="fu">factor</span>(PC, <span class="at">levels =</span> PC)) <span class="sc">%&gt;%</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">"variance"</span>, <span class="st">"PC"</span>), <span class="at">names_to =</span> <span class="st">"factors"</span>, <span class="at">values_to =</span> <span class="st">"-log(adj.p-value)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> PC, <span class="at">y =</span> <span class="st">`</span><span class="at">-log(adj.p-value)</span><span class="st">`</span>, <span class="at">fill =</span> factors)) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>, <span class="at">width =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>) <span class="sc">+</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Spectral"</span>) <span class="sc">+</span> </span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>)) <span class="sc">+</span> </span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="fu">log</span>(<span class="fl">0.05</span>),<span class="at">label =</span> <span class="st">"-log(0.05)"</span>, <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="864"></p>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # no batch to correct</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.fil &lt;- removeCorrelatedTargets(assay.imp)$reduced</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(assay.fil, "output/Diann_CLL_assay.fil.csv")</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>assay.fil <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"output/Diann_CLL_assay.fil.csv"</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="st">"X"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # no batch to correct</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assay.fil &lt;- removeCorrelatedTargets(assay.imp)$reduced</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># write.csv(assay.fil, "output/Diann_CLL_assay.fil.csv")</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>assay.fil <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"output/Diann_CLL_assay.fil.csv"</span>) <span class="sc">%&gt;%</span> <span class="fu">column_to_rownames</span>(<span class="st">"X"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> pcTab<span class="sc">$</span>IGHV</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="st">"M"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"M"</span>)], <span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"U"</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="st">"M"</span>))[(<span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"M"</span>) <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(assay.fil[smpIdx, ])</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="dv">3</span>,</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span></span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rbind</span>(<span class="st">"errors"</span> <span class="ot">=</span> cv.lasso<span class="sc">$</span>cvm[cv.lasso<span class="sc">$</span>index[<span class="st">"min"</span>, ]])</span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>  }) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(cbind, .)</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>errTab <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>)</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>coefMat <span class="ot">&lt;-</span> resMat[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(resMat)), ]</span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>NR <span class="ot">&lt;-</span> <span class="dv">30</span></span>
-<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(coefMat <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span></span>
-<span id="cb37-26"><a href="#cb37-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">length</span>(value)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-27"><a href="#cb37-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb37-28"><a href="#cb37-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(value)) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-29"><a href="#cb37-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cum =</span> <span class="fu">cumsum</span>(count), <span class="at">dif =</span> cum <span class="sc">-</span> NR ) <span class="sc">%&gt;%</span></span>
-<span id="cb37-30"><a href="#cb37-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(dif) <span class="sc">==</span> <span class="fu">min</span>(<span class="fu">abs</span>(dif))) <span class="sc">%&gt;%</span></span>
-<span id="cb37-31"><a href="#cb37-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(value)</span>
-<span id="cb37-32"><a href="#cb37-32" aria-hidden="true" tabindex="-1"></a><span class="co"># frequency vs mean plot</span></span>
-<span id="cb37-33"><a href="#cb37-33" aria-hidden="true" tabindex="-1"></a>sumDF <span class="ot">&lt;-</span> <span class="fu">apply</span>(coefMat, <span class="dv">1</span>, <span class="cf">function</span>(v) <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(v[v <span class="sc">!=</span> <span class="dv">0</span>]), <span class="at">sd =</span> <span class="fu">sd</span>(v[v <span class="sc">!=</span> <span class="dv">0</span>]))) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-34"><a href="#cb37-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(<span class="fu">is.nan</span>(.) <span class="sc">|</span> <span class="fu">is.na</span>(.), <span class="dv">0</span>, .) <span class="sc">%&gt;%</span></span>
-<span id="cb37-35"><a href="#cb37-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb37-36"><a href="#cb37-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-37"><a href="#cb37-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>, <span class="fu">rowSums</span>(coefMat <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> repetition <span class="sc">*</span> <span class="dv">100</span>))  <span class="sc">%&gt;%</span></span>
-<span id="cb37-38"><a href="#cb37-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">"geneID"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"frequency"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-39"><a href="#cb37-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">coefficient =</span> <span class="fu">case_when</span>(mean <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> frequency <span class="sc">&gt;=</span> cutoff <span class="sc">~</span> <span class="st">"positive"</span>, </span>
-<span id="cb37-40"><a href="#cb37-40" aria-hidden="true" tabindex="-1"></a>                                 mean <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> frequency <span class="sc">&lt;</span> cutoff <span class="sc">~</span> <span class="st">"not selected"</span>,</span>
-<span id="cb37-41"><a href="#cb37-41" aria-hidden="true" tabindex="-1"></a>                                 mean <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> frequency <span class="sc">&gt;=</span> cutoff <span class="sc">~</span> <span class="st">"negative"</span>),</span>
-<span id="cb37-42"><a href="#cb37-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">delabel =</span> <span class="fu">ifelse</span>(coefficient <span class="sc">==</span> <span class="st">"not selected"</span>, <span class="cn">NA</span>, geneID))  <span class="sc">%&gt;%</span></span>
-<span id="cb37-43"><a href="#cb37-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>repetition <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> pcTab<span class="sc">$</span>IGHV</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>resMat <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="fu">seq_len</span>(repetition), <span class="cf">function</span>(n){</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    smpIdx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="fu">order</span>(<span class="fu">match</span>(y, <span class="st">"M"</span>))[<span class="dv">1</span><span class="sc">:</span><span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"M"</span>)], <span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"U"</span>), <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="fu">order</span>(<span class="fu">match</span>(y, <span class="st">"M"</span>))[(<span class="fu">sum</span>(y <span class="sc">==</span> <span class="st">"M"</span>) <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">length</span>(y)])</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(assay.fil[smpIdx, ])</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    cv.lasso <span class="ot">&lt;-</span> <span class="fu">cv.glmnet</span>(<span class="at">x =</span> X,</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">y =</span> y[smpIdx], </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">family =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                          <span class="at">alpha =</span> <span class="dv">1</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                          <span class="at">nfolds =</span> <span class="dv">3</span>,</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                          <span class="at">type.measure =</span> <span class="st">"class"</span>)</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coef</span>(cv.lasso, <span class="at">s =</span> cv.lasso<span class="sc">$</span>lambda.min) <span class="sc">%&gt;%</span></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">as.matrix</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rbind</span>(<span class="st">"errors"</span> <span class="ot">=</span> cv.lasso<span class="sc">$</span>cvm[cv.lasso<span class="sc">$</span>index[<span class="st">"min"</span>, ]])</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>  }) <span class="sc">%&gt;%</span> <span class="fu">do.call</span>(cbind, .)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(resMat) <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(repetition)</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>errTab <span class="ot">&lt;-</span> <span class="fu">as_tibble</span>(resMat[<span class="st">"errors"</span>, ], <span class="at">rownames =</span> <span class="st">"repetition"</span>)</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>coefMat <span class="ot">&lt;-</span> resMat[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(resMat)), ]</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>NR <span class="ot">&lt;-</span> <span class="dv">30</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(coefMat <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(value) <span class="sc">%&gt;%</span></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">length</span>(value)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(value)) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cum =</span> <span class="fu">cumsum</span>(count), <span class="at">dif =</span> cum <span class="sc">-</span> NR ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(dif) <span class="sc">==</span> <span class="fu">min</span>(<span class="fu">abs</span>(dif))) <span class="sc">%&gt;%</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(value)</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a><span class="co"># frequency vs mean plot</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>sumDF <span class="ot">&lt;-</span> <span class="fu">apply</span>(coefMat, <span class="dv">1</span>, <span class="cf">function</span>(v) <span class="fu">c</span>(<span class="at">mean =</span> <span class="fu">mean</span>(v[v <span class="sc">!=</span> <span class="dv">0</span>]), <span class="at">sd =</span> <span class="fu">sd</span>(v[v <span class="sc">!=</span> <span class="dv">0</span>]))) <span class="sc">%&gt;%</span> </span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(<span class="fu">is.nan</span>(.) <span class="sc">|</span> <span class="fu">is.na</span>(.), <span class="dv">0</span>, .) <span class="sc">%&gt;%</span></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(<span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"geneID"</span>, <span class="fu">rowSums</span>(coefMat <span class="sc">!=</span> <span class="dv">0</span>) <span class="sc">/</span> repetition <span class="sc">*</span> <span class="dv">100</span>))  <span class="sc">%&gt;%</span></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">setNames</span>(<span class="fu">c</span>(<span class="st">"geneID"</span>, <span class="st">"mean"</span>, <span class="st">"sd"</span>, <span class="st">"frequency"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">coefficient =</span> <span class="fu">case_when</span>(mean <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> frequency <span class="sc">&gt;=</span> cutoff <span class="sc">~</span> <span class="st">"positive"</span>, </span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>                                 mean <span class="sc">==</span> <span class="dv">0</span> <span class="sc">|</span> frequency <span class="sc">&lt;</span> cutoff <span class="sc">~</span> <span class="st">"not selected"</span>,</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>                                 mean <span class="sc">&lt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> frequency <span class="sc">&gt;=</span> cutoff <span class="sc">~</span> <span class="st">"negative"</span>),</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">delabel =</span> <span class="fu">ifelse</span>(coefficient <span class="sc">==</span> <span class="st">"not selected"</span>, <span class="cn">NA</span>, geneID))  <span class="sc">%&gt;%</span></span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Joining with `by = join_by(geneID)`</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean, <span class="at">y =</span> frequency, <span class="at">col =</span> coefficient)) <span class="sc">+</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"dodgerblue3"</span>, <span class="st">"gray50"</span>, <span class="st">"firebrick3"</span>)) <span class="sc">+</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> cutoff, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average coefficients"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>) <span class="sc">+</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean, <span class="at">y =</span> frequency, <span class="at">col =</span> coefficient)) <span class="sc">+</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"dodgerblue3"</span>, <span class="st">"gray50"</span>, <span class="st">"firebrick3"</span>)) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> cutoff, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">lty =</span> <span class="dv">4</span>, <span class="at">col =</span> <span class="st">"black"</span>, <span class="at">lwd =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label</span>(<span class="fu">aes</span>(<span class="at">label =</span> delabel), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Average coefficients"</span>, <span class="at">y =</span> <span class="st">"Frequency (%)"</span>) <span class="sc">+</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 6626 rows containing missing values (`geom_label()`).</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="864"></p>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heatmap</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>colAnno <span class="ot">&lt;-</span> pcTab <span class="sc">%&gt;%</span> </span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(smpID, IGHV) <span class="sc">%&gt;%</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(IGHV) <span class="sc">%&gt;%</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"smpID"</span>)</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>mat_colors <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">IGHV =</span> <span class="fu">c</span>(<span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#15A371"</span>, <span class="st">"U"</span> <span class="ot">=</span> <span class="st">"#F2D39B"</span>))</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>heatData <span class="ot">&lt;-</span> <span class="fu">t</span>(assay.fil[<span class="fu">rownames</span>(colAnno), sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID])</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(heatData) <span class="ot">&lt;-</span> sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>pheatmap<span class="sc">::</span><span class="fu">pheatmap</span>(heatData, </span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">treeheight_row =</span> <span class="dv">0</span>, <span class="at">treeheight_col =</span> <span class="dv">0</span>,</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_colnames =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_col =</span> colAnno, </span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_colors =</span> mat_colors,</span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heatmap</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>colAnno <span class="ot">&lt;-</span> pcTab <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(smpID, IGHV) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(IGHV) <span class="sc">%&gt;%</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_to_rownames</span>(<span class="st">"smpID"</span>)</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>mat_colors <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">IGHV =</span> <span class="fu">c</span>(<span class="st">"M"</span> <span class="ot">=</span> <span class="st">"#15A371"</span>, <span class="st">"U"</span> <span class="ot">=</span> <span class="st">"#F2D39B"</span>))</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>heatData <span class="ot">&lt;-</span> <span class="fu">t</span>(assay.fil[<span class="fu">rownames</span>(colAnno), sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID])</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(heatData) <span class="ot">&lt;-</span> sumDF[<span class="sc">!</span><span class="fu">is.na</span>(sumDF<span class="sc">$</span>delabel), ]<span class="sc">$</span>geneID</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>pheatmap<span class="sc">::</span><span class="fu">pheatmap</span>(heatData, </span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">treeheight_row =</span> <span class="dv">0</span>, <span class="at">treeheight_col =</span> <span class="dv">0</span>,</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">cluster_rows =</span> <span class="cn">FALSE</span>, <span class="at">cluster_cols =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">show_colnames =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_col =</span> colAnno, </span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>                   <span class="at">annotation_colors =</span> mat_colors,</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="st">"row"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="864"></p>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(frequency <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">geneID =</span> <span class="fu">factor</span>(geneID, <span class="at">levels =</span> geneID)) <span class="sc">%&gt;%</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> geneID, <span class="at">y =</span> mean, <span class="at">fill =</span> geneID)) <span class="sc">+</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Coefficients"</span>) <span class="sc">+</span> </span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, <span class="at">ymax =</span> mean <span class="sc">+</span> sd),  <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># barplot </span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>sumDF <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(frequency <span class="sc">&gt;=</span> cutoff) <span class="sc">%&gt;%</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">geneID =</span> <span class="fu">factor</span>(geneID, <span class="at">levels =</span> geneID)) <span class="sc">%&gt;%</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> geneID, <span class="at">y =</span> mean, <span class="at">fill =</span> geneID)) <span class="sc">+</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Coefficients"</span>) <span class="sc">+</span> </span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, <span class="at">ymax =</span> mean <span class="sc">+</span> sd),  <span class="at">width =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Diann_IGHV_files/figure-html/unnamed-chunk-9-3.png" class="img-fluid" width="864"></p>
->>>>>>>> f845b0f (update):docs/Diann_IGHV.html
 </div>
 </div>
 
